@@ -1,0 +1,688 @@
+.quotation-approval-container {
+  margin-left: 300px;  
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+.quotationapprovalheading{
+  margin-bottom: 20px;
+  margin-top: 60px;
+  color: #3D8C4F;
+}
+
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.quotation-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.quotation-table th,
+.quotation-table td {
+  padding: 12px 15px;
+  border: 1px solid black;
+  text-align: left;
+}
+
+.quotation-table th {
+  background-color: gray;
+}
+
+.status {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status.approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* Stored as Rejected, shown as Closed — both spellings keep the same pill. */
+.status.rejected,
+.status.closed {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+.status.proforma-invoice-generated {
+  background-color: #e0f2fe;
+  color: #075985;
+}
+
+.status.invoice-generated {
+  background-color: #ede9fe;
+  color: #5b21b6;
+}
+
+.status.cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status.paid {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.deposit-paid {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status.partial-paid {
+  background-color: #ffedd5;
+  color: #9a3412;
+}
+.status.unpaid {
+  background-color: #82e0ef;
+  color: #01141c;
+}
+
+.status.overdue {
+  background-color: #314a7e;
+  color: #fecaca;
+}
+
+.payment-balance-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px;
+  padding: 16px 18px;
+  border: 1px solid #fde68a;
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fffbeb 0%, #fef9e7 100%);
+  color: #78350f;
+  font-size: 13.5px;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.08);
+}
+
+.payment-balance-summary > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.payment-balance-summary strong {
+  color: #92400e;
+  font-size: 14px;
+}
+
+.payment-amount-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.payment-amount-row label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.payment-amount-row input {
+  width: 190px;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.payment-amount-row input:focus {
+  outline: none;
+  border-color: #1e7d4e;
+  box-shadow: 0 0 0 3px rgba(30, 125, 78, 0.12);
+}
+
+.payment-amount-row input[readonly] {
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 700;
+}
+
+.btn {
+  padding: 6px 10px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.quotation-view-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.quotation-view-table th,
+.quotation-view-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.quotation-view-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-approve {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-reject {
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-approve:hover {
+  background-color: #218838;
+}
+
+.btn-reject:hover {
+  background-color: #c82333;
+}
+
+.quotationapproval-view-info .label {
+  width: 140px; /* Adjust based on label length */
+  font-weight: bold;
+  color: #333;
+}
+.pagination {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  
+}
+
+.filter-bar input {
+  flex: 1 1 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.filter-bar input[type="date"] {
+  padding-right: 6px;
+}
+
+.filter-bar input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* .company-logo-corner {
+  position: absolute;
+  top: 90px;     
+  right: 20px;  
+  width: 270px;   
+  height: auto;
+} */
+
+/* addresscss */
+.quotation-view-info .info-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.quotation-view-info .label {
+  min-width: 310px;     /* same width as others */
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.info-row .colon {
+  margin: 0 0px;
+}
+
+.info-row .values {
+  flex: 1;
+  word-break: break-word;
+  line-height: 1.6;
+}
+/* .action-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: #fd7e14;
+}
+
+.action-icon:hover {
+    opacity: 0.8;
+} */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #dbeafe;
+  border-top: 3px solid #2563eb;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+.download-spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #d1d5db;
+  border-top: 3px solid #2563eb;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+.generate-invoice-btn {
+  background: orange;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.generate-invoice-btn:hover {
+  opacity: 0.9;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.paid-action-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10020;
+  padding: 24px;
+}
+
+.paid-action-modal {
+  background: #ffffff;
+  border-radius: 18px;
+  width: min(540px, 100%);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
+}
+
+.paid-action-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.paid-action-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.paid-action-close-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #475569;
+  font-size: 20px;
+  line-height: 0.9;
+}
+.paid-action-closepopup-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  border-radius: 12px;
+  cursor: pointer;
+  color: red;
+  font-size: 20px;
+  line-height: 0.9;
+}
+
+.paid-action-body {
+  padding: 20px 22px 24px;
+}
+
+.payment-option-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #334155;
+  padding: 10px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.payment-option:hover {
+  border-color: #94a3b8;
+}
+
+.payment-option:has(input:checked) {
+  border-color: #1e7d4e;
+  background: #ecfdf5;
+  color: #14532d;
+  box-shadow: 0 0 0 3px rgba(30, 125, 78, 0.1);
+}
+
+.payment-option input {
+  accent-color: #1e7d4e;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.proof-upload-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border: 1.5px dashed #cbd5e1;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.03);
+}
+
+.proof-upload-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.proof-upload-row input[type="file"] {
+  padding: 10px 12px;
+  border: 1px solid #e6eef6;
+  border-radius: 10px;
+  background: #f8fafc;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.proof-file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.proof-file-list-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.proof-files-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+.proof-file-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #0f172a;
+  background: #f1f5f9;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6eef6;
+  border-left: 3px solid #1e7d4e;
+  max-width: 100%;
+  word-break: break-all;
+}
+
+.proof-file-name-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.proof-file-remove-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #ef4444;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.proof-file-remove-btn:hover:not(:disabled) {
+  color: #b91c1c;
+}
+
+.proof-file-remove-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.payment-action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.generate-invoice-btn,
+.generate-proforma-btn,
+.cancel-quotation-btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  min-width: 150px;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+  transition: transform 0.1s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.generate-invoice-btn:hover:not(:disabled),
+.generate-proforma-btn:hover:not(:disabled),
+.cancel-quotation-btn:hover:not(:disabled) {
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.14);
+}
+
+.generate-invoice-btn:active:not(:disabled),
+.generate-proforma-btn:active:not(:disabled),
+.cancel-quotation-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* Proforma that never got paid — solid red so it reads as destructive
+   instead of disappearing into the white dialog. */
+.cancel-quotation-btn {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  border: 1px solid #b91c1c;
+}
+
+.cancel-quotation-btn:hover:not(:disabled) {
+  background: #b91c1c !important;
+}
+
+.generate-invoice-btn {
+  background: #1e7d4e;
+  color: #ffffff;
+}
+
+.generate-proforma-btn {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border: 1px solid #1d4ed8;
+}
+
+.generate-proforma-btn:hover:not(:disabled) {
+  background: #1d4ed8 !important;
+}
+
+.generate-invoice-btn:disabled,
+.generate-proforma-btn:disabled,
+.cancel-quotation-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.invoice-approval-list  .data-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  font-size: 12.5px !important;
+  table-layout: auto !important;
+}
+
+.invoice-approval-list .data-table th {
+    background: #f8fafc !important;
+}
+
+.invoice-approval-list .data-table th {
+  background: #f8fafc !important;
+  color: #64748b !important;
+  font-weight: 800 !important;
+  text-align: left !important;
+  padding: 15px 16px !important;
+  border: none !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  white-space: nowrap;
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.invoice-approval-list .data-table td {
+  padding: 10px 14px !important;
+  color: #334155 !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  vertical-align: middle !important;
+  background: #ffffff !important;
+  font-size: 12.5px !important;
+  word-break: normal !important;
+}
+
+.invoice-approval-list .data-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+.invoice-approval-list .data-table tbody tr:hover td {
+  background: #f8fafc !important;
+}
+
+/* Dialog footer button alignment */
+[role="alertdialog"] [role="region"] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Ensure proper alignment for AlertDialogFooter */
+.max-w-3xl .gap-2 {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+}

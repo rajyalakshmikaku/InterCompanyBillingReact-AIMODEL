@@ -1,0 +1,364 @@
+/* ============================================================
+   ViewPopup — premium detail modal
+   Uses high-specificity selectors to beat Quotation.css overrides
+   ============================================================ */
+
+/* ── Overlay ── */
+.quotation-view-overlay.viewpopup-modern {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(8, 16, 36, 0.65) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 10000 !important;
+  padding: 32px 16px !important;
+}
+
+/* ── Panel ── */
+.quotation-view-overlay.viewpopup-modern .quotation-view-modal {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  width: 100% !important;
+  max-width: 1130px !important;
+  max-height: calc(100vh - 120px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.06),
+    0 8px 24px rgba(0,0,0,0.12),
+    0 32px 64px rgba(0,0,0,0.20) !important;
+  animation: vpModalIn 0.25s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+@keyframes vpModalIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Header ── */
+.quotation-view-overlay.viewpopup-modern .quotation-view-header {
+  position: relative !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 12px 20px !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  background-image: none !important;
+}
+
+.quotation-view-overlay.viewpopup-modern .quotation-view-title {
+  margin: 0 !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.01em !important;
+  padding-right: 0 !important;
+}
+
+/* Close button */
+.quotation-view-overlay.viewpopup-modern .quotation-view-close-btn {
+  position: static !important;
+  transform: none !important;
+  top: auto !important;
+  right: auto !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  color: #64748b !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+  transition: background 0.15s, color 0.15s, border-color 0.15s !important;
+}
+.quotation-view-overlay.viewpopup-modern .quotation-view-close-btn:hover {
+  background: #fee2e2 !important;
+  border-color: #fca5a5 !important;
+  color: #dc2626 !important;
+  transform: none !important;
+}
+
+/* Company logo */
+.quotation-view-overlay.viewpopup-modern .company-logo-corner {
+  position: static !important;
+  transform: none !important;
+  height: 28px !important;
+  width: auto !important;
+  max-width: 80px !important;
+  object-fit: contain !important;
+  border-radius: 5px !important;
+  background: #f8fafc !important;
+  padding: 2px 5px !important;
+  border: 1px solid #e8edf2 !important;
+  margin-right: 6px !important;
+}
+
+/* ── Body ── */
+.quotation-view-overlay.viewpopup-modern .quotation-view-body {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  padding: 20px 24px 28px !important;
+  background: #f8fafc !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: #cbd5e1 transparent !important;
+}
+.quotation-view-overlay.viewpopup-modern .quotation-view-body::-webkit-scrollbar { width: 5px; }
+.quotation-view-overlay.viewpopup-modern .quotation-view-body::-webkit-scrollbar-track { background: transparent; }
+.quotation-view-overlay.viewpopup-modern .quotation-view-body::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
+.quotation-view-overlay.viewpopup-modern .quotation-view-body::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ── Section blocks (card style) ── */
+.quotation-view-overlay.viewpopup-modern .vp-section {
+  background: #ffffff;
+  border: 1px solid #e8edf2;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+/* ── Section titles ── */
+.quotation-view-overlay.viewpopup-modern .quotation-view-section-title {
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.09em !important;
+  color: #3D8C4F !important;
+  margin: 0 !important;
+  padding: 10px 16px !important;
+  background: #f0faf3 !important;
+  border: none !important;
+  border-bottom: 1px solid #e0f0e6 !important;
+  border-left: none !important;
+  border-radius: 0 !important;
+  display: block !important;
+}
+
+/* ── Info grid — inside a section card ── */
+.quotation-view-overlay.viewpopup-modern .quotation-view-info {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  font-size: 13px !important;
+  padding: 0 !important;
+}
+.quotation-view-overlay.viewpopup-modern .quotation-view-info > div,
+.quotation-view-overlay.viewpopup-modern .quotation-view-info .info-row {
+  display: grid !important;
+  grid-template-columns: 150px auto 1fr !important;
+  align-items: start !important;
+  gap: 0 4px !important;
+  padding: 9px 16px !important;
+  border-bottom: 1px solid #f8fafc !important;
+  color: #334155 !important;
+  margin: 0 !important;
+}
+.quotation-view-overlay.viewpopup-modern .quotation-view-info > div:nth-last-child(-n+2),
+.quotation-view-overlay.viewpopup-modern .quotation-view-info .info-row:last-child {
+  border-bottom: none !important;
+}
+
+/* Label */
+.quotation-view-overlay.viewpopup-modern .quotation-view-info .label {
+  width: auto !important;
+  min-width: auto !important;
+  max-width: none !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  white-space: nowrap !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+}
+/* Colon */
+.quotation-view-overlay.viewpopup-modern .quotation-view-info > div > :not(.label):first-of-type {
+  color: #94a3b8;
+}
+/* Value */
+.quotation-view-overlay.viewpopup-modern .quotation-view-info span:not(.label) {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #0f172a !important;
+  word-break: break-word !important;
+}
+
+/* ── Payment history — compact panel beside the quotation summary ── */
+.quotation-view-overlay.viewpopup-modern .payment-history-section {
+  width: 100% !important;
+}
+.quotation-view-overlay.viewpopup-modern .payment-history-section .quotation-view-section-title {
+  padding: 10px 16px !important;
+}
+.quotation-view-overlay.viewpopup-modern .payment-history-section .data-table {
+  table-layout: auto !important;
+  font-size: 12.5px !important;
+}
+.quotation-view-overlay.viewpopup-modern .payment-history-section .data-table th {
+  padding: 10px 14px !important;
+  font-size: 10px !important;
+  line-height: 1.25 !important;
+}
+.quotation-view-overlay.viewpopup-modern .payment-history-section .data-table td {
+  padding: 10px 14px !important;
+  font-size: 12.5px !important;
+  line-height: 1.25 !important;
+  word-break: break-word !important;
+}
+.quotation-view-overlay.viewpopup-modern .payment-history-section .data-table th:nth-child(1),
+.quotation-view-overlay.viewpopup-modern .payment-history-section .data-table td:nth-child(1) {
+  width: 26% !important;
+  text-align: left !important;
+}
+.quotation-view-overlay.viewpopup-modern .payment-history-section .data-table th:nth-child(2),
+.quotation-view-overlay.viewpopup-modern .payment-history-section .data-table td:nth-child(2) {
+  width: 16% !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+.quotation-view-overlay.viewpopup-modern .payment-history-section .data-table th:nth-child(3),
+.quotation-view-overlay.viewpopup-modern .payment-history-section .data-table td:nth-child(3),
+.quotation-view-overlay.viewpopup-modern .payment-history-section .data-table th:nth-child(4),
+.quotation-view-overlay.viewpopup-modern .payment-history-section .data-table td:nth-child(4),
+.quotation-view-overlay.viewpopup-modern .payment-history-section .data-table th:nth-child(5),
+.quotation-view-overlay.viewpopup-modern .payment-history-section .data-table td:nth-child(5) {
+  width: 19.3% !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+}
+.quotation-view-overlay.viewpopup-modern .payment-amount-values {
+  display: grid !important;
+  gap: 2px !important;
+  text-align: right !important;
+}
+
+/* ── Details table ── */
+.quotation-view-overlay.viewpopup-modern .data-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  font-size: 12.5px !important;
+  table-layout: auto !important;
+}
+.quotation-view-overlay.viewpopup-modern .data-table thead tr {
+  background: #f8fafc !important;
+}
+.quotation-view-overlay.viewpopup-modern .data-table th {
+  padding: 10px 14px !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+  color: #64748b !important;
+  text-align: left !important;
+  border-bottom: 1.5px solid #e2e8f0 !important;
+  border-top: none !important;
+  white-space: nowrap !important;
+  background: #f8fafc !important;
+  word-break: normal !important;
+}
+.quotation-view-overlay.viewpopup-modern .data-table td {
+  padding: 10px 14px !important;
+  color: #334155 !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  vertical-align: middle !important;
+  background: #ffffff !important;
+  font-size: 12.5px !important;
+  word-break: normal !important;
+}
+.quotation-view-overlay.viewpopup-modern .data-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+.quotation-view-overlay.viewpopup-modern .data-table tbody tr:hover td {
+  background: #f8fafc !important;
+}
+
+/* ── Generate Invoice button ── */
+.quotation-view-overlay.viewpopup-modern .generate-invoice-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 10px 24px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #2e7d46 0%, #3D8C4F 100%) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(61,140,79,0.30) !important;
+  transition: box-shadow 0.15s, transform 0.15s !important;
+}
+.quotation-view-overlay.viewpopup-modern .generate-invoice-btn:hover:not(:disabled) {
+  box-shadow: 0 6px 20px rgba(61,140,79,0.38) !important;
+  transform: translateY(-1px) !important;
+}
+.quotation-view-overlay.viewpopup-modern .generate-invoice-btn:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .quotation-view-overlay.viewpopup-modern .quotation-view-info {
+    grid-template-columns: 1fr !important;
+  }
+  .quotation-view-overlay.viewpopup-modern .quotation-view-body {
+    padding: 14px 14px 20px !important;
+  }
+}
+
+/* Proof / upload area styling (consistent with approval screens) */
+.quotation-view-overlay.viewpopup-modern .proof-upload-row {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  padding: 12px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%) !important;
+  border: 1px solid rgba(15, 23, 42, 0.04) !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.03) !important;
+}
+
+.quotation-view-overlay.viewpopup-modern .proof-upload-label {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+}
+
+.quotation-view-overlay.viewpopup-modern .proof-upload-row input[type="file"] {
+  padding: 10px 12px !important;
+  border: 1px solid #e6eef6 !important;
+  border-radius: 10px !important;
+  background: #f8fafc !important;
+  cursor: pointer !important;
+}
+
+.quotation-view-overlay.viewpopup-modern .proof-file-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+}
+
+.quotation-view-overlay.viewpopup-modern .proof-file-name {
+  font-size: 13px !important;
+  color: #0f172a !important;
+  background: #f1f5f9 !important;
+  padding: 6px 10px !important;
+  border-radius: 8px !important;
+  border: 1px solid #e6eef6 !important;
+  word-break: break-all !important;
+}

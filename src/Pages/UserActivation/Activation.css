@@ -1,0 +1,98 @@
+.activation-background {
+  position: relative;
+  min-height: 100vh; /* allow full scroll */
+  width: 100%;
+  overflow-y: auto;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+
+.activation-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.65);
+  z-index: 0;
+}
+.activation-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f7f8fc, #e5eaf5);
+}
+
+.activation-card {
+  background: #aca2a23b;
+  border: 1px solid black; 
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: none;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.activation-card h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.activation-card p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.status-message {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.status-message.success {
+  color: green;
+}
+
+.status-message.error {
+  color: red;
+}
+
+.activationbtn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.activationbtn:hover {
+  background-color: #0056b3;
+}
+
+.activation-wrapper {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95); /* card is clearer */
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 150px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

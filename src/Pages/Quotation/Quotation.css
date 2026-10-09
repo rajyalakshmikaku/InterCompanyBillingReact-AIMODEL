@@ -1,0 +1,1767 @@
+.quotation-container {
+  display: block;
+  width: 100%;
+  min-height: auto;
+  height: auto;
+}
+
+.quotation-content {
+  width: 100%;
+  padding: 70px 32px 32px;
+  color: black;
+  margin-left: 0;
+  background-size: cover;
+  overflow-y: auto;
+}
+
+
+.quotationtable-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+  width: 100%;
+}
+.records-per-page {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.Invoicebuttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.quotation-buttons {
+  margin: 0 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.field-filters  {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 2px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.field-filters input {
+  margin: 5px;
+  padding: 5px;
+  color: black;
+}
+
+.quotation-filter-btn{
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: gray;
+  color: white;
+
+}
+
+.pagination button {
+  margin: 0 4px;
+  padding: 4px 8px;
+}
+
+.pagination .active {
+  font-weight: bold;
+  background-color: #ddd;
+}
+
+
+
+.quotationtable th{
+    color:white;
+      border: 1px solid black;
+}
+
+.quotationtable td {
+  border: 1px solid black;
+   
+}
+
+/* Optional: Zebra striping for better readability */
+.quotationtable tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.legend {
+  margin-top: -15px;
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: black;
+  margin-left: 85%;
+}
+
+
+
+.quotationbuttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.Generate {
+   width: 28px !important;
+  height: 28px !important;
+  background-color: #1e7d4e;
+  border: none;
+
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+}
+
+
+/* GENERATE quotation */
+/* quotation Form Container */
+.quotation-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  width: 100%;
+  background-color: #f8f9fa;
+}
+
+/* quotation Form Styling */
+.quotation-form {
+  background: #fff;
+  width: 100%;
+  max-width: 800px;   /* ✅ Restricts max width */
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+/* quotation Form Headings */
+.quotation-form h3 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 20px;
+}
+
+/* quotation Info Fields */
+.quotation-info {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+}
+
+/* For all inputs, selects, and textareas inside quotation modal */
+.quotation-form-modal input[type="text"],
+.quotation-form-modal input[type="number"],
+.quotation-form-modal input[type="date"],
+.quotation-form-modal select,
+.quotation-form-modal textarea {
+  width: 100%;                /* Make them all full-width within container */
+  padding: 6px 9px;           /* Compact height, less white space */
+  font-size: 13px;            /* Standard readable font */
+  border: 1px solid #3D8C4F;     /* Light border */
+  border-radius: 8px;          /* Smooth corners */
+  box-sizing: border-box;     /* Prevent overflow issues */
+  margin-top: 2px;
+  margin-bottom: 6px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Compact, consistent section headers inside the quotation modal */
+.quotation-form-modal .quotationsub-title {
+  margin: 12px 0 6px;
+  font-size: 14px;
+  font-weight: 700;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #d9e2ec;
+}
+
+.quotation-form-modal label {
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+/* On focus, make inputs highlighted */
+.quotation-form-modal input:focus,
+.quotation-form-modal select:focus,
+.quotation-form-modal textarea:focus {
+  border-color: #3D8C4F; 
+  box-shadow: 0 0 5px #3D8C4F;
+  outline: none;
+}
+
+/* Table inputs specifically */
+.quotation-details-table input[type="text"],
+.quotation-details-table input[type="number"] {
+  width: 100%;              /* Keep table inputs uniform */
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+/* Dropdowns inside table */
+.quotation-details-table select {
+  width: 150px;
+  padding: 8px;
+}
+
+.quotation-details-table th{
+   border: 1px solid black;
+   color:#fff;
+
+
+}
+
+/* Optional: Zebra striping for better readability */
+.quotation-details-table  tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+
+/* Totals Section */
+.totals-section {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+
+
+/* Action Buttons */
+.quotation-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.save-draft-btn,
+.submit-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  
+}
+
+.save-draft-btn {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.submit-btn {
+  background-color: #1e7d4e;
+  color: white;
+  border: none;
+}
+
+
+.add-row-btn {
+  background-color: #007bff;
+  color: white;
+  font-size: 20px;
+  padding: 2px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  margin-top: 5pxpx;
+  transition: background-color 0.2s ease;
+  width:auto;
+}
+.add-row-btn:hover {
+  background-color: #0056b3;
+}
+.discount-row-btn {
+  background-color: #1e7d4e;
+  color: #1e7d4e;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  margin-top: 5pxpx;
+  transition: background-color 0.2s ease;
+  width:35px;
+  height: 27px;
+}
+
+/* NOTES SECTION */
+
+.notes-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* spacing between rows */
+}
+
+/* First row - Project/Cost Center + Status */
+.notes-row {
+  display: flex;
+  gap: 50px;
+  width: 95%;
+}
+
+.notes-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-field label {
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.notes-field input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Notes/Comment - Full Width */
+.notes-full {
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-full label {
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+
+.quotation-form-modal textarea {
+  padding: 10px;
+  border: 1px solid #3D8C4F;
+  border-radius: 4px;
+  /* min-height: 70px; */
+  resize: vertical;
+}
+
+
+
+/* 🔹 Modal Overlay */
+.quotation-form-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+/* 🔹 quotation Modal */
+.quotation-form-modal {
+  position: relative;
+  background: #fff;
+  width: min(1120px, 100%);
+  max-width: 100%;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Tighten the title row of the generate-quotation modal */
+.quotation-form-modal > div > h2,
+.quotation-form-modal h2 {
+  margin: 0 0 6px;
+  font-size: 19px;
+}
+
+/* Company logo — anchored neatly in the title row, clear of the close (×) button,
+   so it never overlaps the form fields. */
+.quotation-form-modal .company-logo-corner {
+  position: static !important;
+  transform: none !important;
+  height: 28px !important;
+  width: auto !important;
+  max-width: 80px !important;
+  object-fit: contain !important;
+  border-radius: 5px !important;
+  background: #f8fafc !important;
+  padding: 2px 5px !important;
+  border: 1px solid #e8edf2 !important;
+  margin-right: 6px !important;
+}
+
+/* Decent, on-brand scrollbar for the generate-quotation modal */
+.quotation-form-modal {
+  scrollbar-width: thin;
+  scrollbar-color: #cdddd2 transparent;
+}
+.quotation-form-modal::-webkit-scrollbar {
+  width: 9px;
+}
+.quotation-form-modal::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 8px 0;
+}
+.quotation-form-modal::-webkit-scrollbar-thumb {
+  background: #cdddd2;
+  border-radius: 8px;
+  border: 2px solid #ffffff;
+}
+.quotation-form-modal::-webkit-scrollbar-thumb:hover {
+  background: #aecab6;
+}
+
+/* Keep any horizontal scrolling inside the details table only,
+   so the whole popup no longer shows a bottom scrollbar */
+.quotation-form-modal .table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* ---- Quotation details table: keep headers aligned with their inputs ---- */
+.quotation-form-modal .data-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Allow long headers to wrap instead of overflowing into the next column */
+.quotation-form-modal .data-table th {
+  white-space: normal !important;
+  text-align: center !important;
+  vertical-align: middle;
+  font-size: 11px !important;
+  line-height: 1.25;
+  padding: 8px 6px !important;
+  word-break: break-word;
+}
+
+.quotation-form-modal .data-table td {
+  padding: 6px 6px !important;
+  vertical-align: middle;
+}
+
+/* Let the cell inputs shrink to their column instead of forcing a 110px min */
+.quotation-form-modal .data-table input,
+.quotation-form-modal .data-table textarea {
+  min-width: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 6px 7px !important;
+}
+
+/* Column proportions (1st cell is the hidden ID column) */
+/* .quotation-form-modal .data-table th:nth-child(2), */
+.quotation-form-modal .data-table td:nth-child(2) { width: 18%; }   /* NAME */
+.quotation-form-modal .data-table th:nth-child(3),
+.quotation-form-modal .data-table td:nth-child(3) { width: 11%; }    /* QUANTITY */
+/* .quotation-form-modal .data-table th:nth-child(8), */
+.quotation-form-modal .data-table td:nth-child(8) { width: 5%; }    /* VAT */
+.quotation-form-modal .data-table th:last-child,
+.quotation-form-modal .data-table td:last-child { width: 8%; }      /* actions */
+
+.quotation-form-modal .data-table td:nth-child(3) input {
+  width: 100% !important;
+  min-width: 110px !important;
+}
+
+/* Alertify dialogs/notifications must sit above the modal (z-index 9999) */
+.alertify,
+.alertify .ajs-dimmer,
+.alertify .ajs-modal,
+.ajs-modal {
+  z-index: 2147483600 !important;
+}
+
+.alertify-notifier {
+  z-index: 2147483647 !important;
+}
+
+
+.remove-row-btn {
+  background: none;          /* No background */
+  border: none;              /* Remove border */
+  color: red;                /* Trash icon color */
+  font-size: 15px;           /* Make icon bigger */
+  cursor: pointer;           /* Pointer on hover */
+  padding: 0;                /* Remove extra spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove-row-btn:hover {
+  color: darkred;            /* Darker red on hover */
+  transform: scale(1.2);     /* Slight zoom effect */
+  transition: 0.2s ease;
+}
+
+
+.closequotation-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: red;
+  font-size: 24px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.remove-row-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  background-color: transparent; /* or your preferred color */
+  border: none;
+  cursor: pointer;
+  font-size: 20px; /* adjust as needed */
+}
+/* main modal (Generate quotation) */
+.generate-quotation-modal {
+  z-index: 1000;
+}
+
+/* billing entity modal */
+.billing-modal-overlay {
+  position: fixed;
+  z-index: 2000; /* should be higher than 1000 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 800px;
+  border-radius: 8px;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.quotation-company-logo-corner {
+  position: static !important;
+  transform: none !important;
+  height: 28px !important;
+  width: auto !important;
+  max-width: 80px !important;
+  object-fit: contain !important;
+  border-radius: 5px !important;
+  background: #f8fafc !important;
+  padding: 2px 5px !important;
+  border: 1px solid #e8edf2 !important;
+  margin-right: 6px !important;
+}
+
+/* Overlay */
+.quotation-view-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(8, 16, 36, 0.65) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 10000 !important;
+  padding: 32px 16px !important;
+}
+/* Modal container */
+.quotation-view-overlay .quotation-view-modal {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  width: 100% !important;
+  max-width: 1100px !important;
+  max-height: calc(100vh - 120px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.06),
+    0 8px 24px rgba(0,0,0,0.12),
+    0 32px 64px rgba(0,0,0,0.20) !important;
+  animation: vpModalIn 0.25s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+
+/* Fixed brand header — stays put while only the body scrolls */
+.quotation-view-header {
+  position: relative !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 12px 20px !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  background-image: none !important;
+}
+
+/* Scrollable content area */
+.quotation-view-body {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  padding: 20px 24px 28px !important;
+  background: #f8fafc !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: #cbd5e1 transparent !important;
+}
+
+/* Slim, on-brand scrollbar that stays clear of the rounded corners */
+.quotation-view-body::-webkit-scrollbar {
+  width: 8px;
+}
+.quotation-view-body::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 6px 0;
+}
+.quotation-view-body::-webkit-scrollbar-thumb {
+  background: #cdddd2;
+  border-radius: 8px;
+}
+.quotation-view-body::-webkit-scrollbar-thumb:hover {
+  background: #aecab6;
+}
+
+/* Close button — red square with white X, pinned top-right.
+   Prefixed with .quotation-view-overlay so it wins over page-level overrides. */
+.quotation-view-overlay .quotation-view-close-btn {
+  position: static !important;
+  transform: none !important;
+  top: auto !important;
+  right: auto !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  color: #64748b !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+  transition: background 0.15s, color 0.15s, border-color 0.15s !important;
+}
+
+.quotation-view-overlay .quotation-view-close-btn:hover {
+  background: #fee2e2 !important;
+  border-color: #fca5a5 !important;
+  color: #dc2626 !important;
+  transform: none !important;
+}
+
+.quotation-view-overlay .close-btn-container {
+  width: 100%;
+  display: flex;
+  padding: 10px 22px 8px 0;
+  justify-content: flex-end;
+  background-color: rgb(244, 246, 248);
+}
+
+.quotation-view-overlay .close-btn-container .quotation-view-creditclose-btn {
+  position: sticky;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: red;
+  border: none;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  z-index: 5;
+}
+
+.quotation-view-overlay .close-btn-container .quotation-view-creditclose-btn:hover {
+  background: red;
+  transform: translateY(-10%) scale(1.06);
+}
+
+.section-container {
+  background: #ffffff;
+  border: 1px solid #e8edf2;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+/* Title text sits inside the fixed brand header */
+.quotation-view-title {
+  margin: 0 !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.01em !important;
+  padding-right: 0 !important;
+}
+
+.quotation-view-body > .quotation-view-section-title:first-child {
+  margin-top: 0;
+}
+
+.quotation-view-section-title {
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.09em !important;
+  color: #3D8C4F !important;
+  margin: 0 !important;
+  padding: 10px 16px !important;
+  background: #f0faf3 !important;
+  border: none !important;
+  border-bottom: 1px solid #e0f0e6 !important;
+  border-left: none !important;
+  border-radius: 0 !important;
+  display: block !important;
+}
+
+/* Info — compact two-column grid to cut vertical scrolling */
+.quotation-view-info {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  font-size: 13px !important;
+  padding: 0 !important;
+}
+
+.quotation-view-overlay .quotation-view-info > div,
+.quotation-view-overlay .quotation-view-info .info-row {
+  display: grid !important;
+  grid-template-columns: 150px auto 1fr !important;
+  align-items: start !important;
+  gap: 0 4px !important;
+  padding: 9px 16px !important;
+  border-bottom: 1px solid #f8fafc !important;
+  color: #334155 !important;
+  margin: 0 !important;
+}
+
+/* Highlighted label — high specificity so it overrides page CSS */
+.quotation-view-overlay .quotation-view-info .label {
+  width: auto !important;
+  min-width: auto !important;
+  max-width: none !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  white-space: nowrap !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+}
+
+.quotation-view-overlay .quotation-view-info span:not(.label) {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #0f172a !important;
+  word-break: break-word !important;
+}
+
+@media (max-width: 720px) {
+  .quotation-view-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Details table inside the view popup: wrap long headers so they stay
+   aligned with their cells, and keep the rows compact. */
+.quotation-view-modal .data-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  font-size: 12.5px !important;
+  table-layout: auto !important;
+}
+
+.quotation-view-modal .data-table th {
+    background: #f8fafc !important;
+}
+
+.quotation-view-modal .data-table th {
+  padding: 10px 14px !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+  color: #64748b !important;
+  text-align: left !important;
+  border-bottom: 1.5px solid #e2e8f0 !important;
+  border-top: none !important;
+  white-space: nowrap !important;
+  background: #f8fafc !important;
+  word-break: normal !important;
+}
+
+.quotation-view-modal .data-table th.num,
+.quotation-view-modal .data-table td.num {
+  text-align: right !important;
+}
+
+.quotation-view-modal .data-table td {
+  padding: 10px 14px !important;
+  color: #334155 !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  vertical-align: middle !important;
+  background: #ffffff !important;
+  font-size: 12.5px !important;
+  word-break: normal !important;
+}
+
+.quotation-view-modal .data-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+.quotation-view-modal .data-table tbody tr:hover td {
+  background: #f8fafc !important;
+}
+
+
+/* Detail table — clean, aligned with app theme */
+.quotation-view-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 10px;
+  font-size: 13px;
+  border: 1px solid #e3e8ee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.quotation-view-table th,
+.quotation-view-table td {
+  padding: 9px 12px;
+  border: none;
+  border-bottom: 1px solid #eef2f6;
+  text-align: left;
+}
+
+.quotation-view-table th {
+  background-color: #f6f8f7;
+  color: #374151;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 2px solid #e3e8ee;
+}
+
+.quotation-view-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.quotation-view-table tbody tr:hover {
+  background: #f6faf7;
+}
+
+.quotation-view-table a {
+  color: #2e6c3b;
+  text-decoration: underline;
+}
+
+.quotation-view-table a:hover {
+  text-decoration: none;
+}
+
+/* inventory popup styles */
+
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inventory-table th, .inventory-table td {
+   border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.inventory-table th {
+  background: rgba(108, 109, 111, 0.9);
+}
+
+
+
+
+.uniform-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    min-width: 80px;   /* decreased */
+    color: white;
+}
+
+/* Created */
+.status-created {
+    background-color: #f39c12;
+}
+
+/* Order Completed (invoice) / Approved (quotation) */
+.status-ordercompleted,
+.status-invoicegenerated {
+    background-color: #27ae60;
+}
+
+/* Cancelled */
+.status-cancelled {
+    background-color: #e74c3c;
+}
+
+/* Credit Note Created */
+.status-creditnote {
+    background-color: #3498db;
+}
+
+/* Approved */
+.status-paid {
+    background-color: #27ae60;
+}
+
+/* Proforma Invoice Generated */
+.status-proforma {
+    background-color: #06b6d4;
+}
+
+/* Expired */
+.status-expired {
+    background-color: #94a3b8;
+}
+
+/* Past its due date and still open */
+.status-overdue {
+    background-color: #b45309;
+}
+
+/* ── Modal Header ── */
+.cqf-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  margin-bottom: 4px;
+  border-bottom: 2px solid #e8f5ec;
+}
+
+.cqf-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cqf-title {
+  margin: 0 0 2px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a5c35;
+}
+
+.cqf-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+.cqf-meta-sep {
+  color: #cbd5e1;
+}
+
+.cqf-close-btn {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #64748b;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.cqf-close-btn:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+/* ── Sections ── */
+.cqf-section {
+  border: 1px solid #e0ede5;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.cqf-section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #f0faf3;
+  border-bottom: 1px solid #e0ede5;
+}
+
+.cqf-section-icon {
+  font-size: 15px;
+  color: #1e7d4e;
+  display: flex;
+  align-items: center;
+}
+
+.cqf-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a5c35;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex: 1;
+}
+
+/* ── Select Company / Change Company button ── */
+.cqf-select-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #fff;
+  background: #1e7d4e;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.cqf-select-btn:hover {
+  background: #155d39;
+}
+
+/* ── Company / Banking info display grid ── */
+.cqf-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding: 0;
+}
+
+.cqf-info-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  border-right: 1px solid #f0f4f0;
+  border-bottom: 1px solid #f0f4f0;
+}
+
+.cqf-info-item:nth-child(3n) {
+  border-right: none;
+}
+
+.cqf-receiving-grid {
+  grid-template-columns: 1fr !important;
+}
+
+.cqf-receiving-grid .cqf-info-item {
+  border-right: none;
+}
+
+.cqf-info-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.cqf-info-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+  word-break: break-word;
+}
+
+/* ── Empty states ── */
+.cqf-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 16px;
+  text-align: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 13px;
+  background: #f8fafc;
+}
+
+.cqf-empty-state.cqf-empty-error {
+  background: #fff5f5;
+  border: 1px dashed #fca5a5;
+  border-radius: 8px;
+  margin: 8px;
+}
+
+.cqf-empty-state.cqf-empty-muted {
+  opacity: 0.65;
+}
+
+.cqf-empty-icon {
+  font-size: 28px;
+  color: #cbd5e1;
+}
+
+/* ── Fields ── */
+.cqf-fields-row {
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  flex-wrap: wrap;
+}
+
+.cqf-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  padding: 14px;
+}
+
+.cqf-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.cqf-field-receiving {
+  flex: 2;
+}
+
+.cqf-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+/* ── Input with inline select button ── */
+.cqf-input-with-btn {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.cqf-input-with-btn .cqf-readonly-input {
+  flex: 1;
+}
+
+.cqf-inline-select-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #fff;
+  background: #1e7d4e;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.cqf-inline-select-btn:hover {
+  background: #155d39;
+}
+
+/* Read-only display inputs */
+.cqf-readonly-input {
+  background: #f1f5f1 !important;
+  color: #374151;
+  cursor: default;
+}
+
+/* ── Add row button in table header ── */
+.cqf-add-row-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #fff;
+  background: #2563eb;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cqf-add-row-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ── Details table ── */
+.cqf-details-table {
+  width: 100%;
+  table-layout: auto !important;
+}
+
+.cqf-details-table th {
+  white-space: normal !important;
+  text-align: center !important;
+  font-size: 11px !important;
+  padding: 8px 6px !important;
+}
+
+.cqf-details-table td {
+  padding: 6px 5px !important;
+  vertical-align: middle;
+}
+
+/* Item name cell */
+.cqf-item-cell {
+  min-width: 160px;
+}
+
+.cqf-item-name-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cqf-item-textarea {
+  width: 100%;
+  min-height: 34px;
+  resize: none;
+  background: #f1f5f1;
+  border: 1px solid #3D8C4F;
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 12.5px;
+  box-sizing: border-box;
+}
+
+.cqf-item-pick-btn {
+  align-self: center;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #1e7d4e !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.cqf-item-pick-btn:hover {
+  background: #155d39 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 125, 78, 0.35);
+}
+
+/* Number inputs in table */
+.cqf-num-input {
+  width: 100%;
+  min-width: 0 !important;
+  text-align: right;
+  border: 1px solid #3D8C4F;
+  border-radius: 6px;
+  padding: 5px 7px;
+  font-size: 12.5px;
+  box-sizing: border-box;
+}
+
+.cqf-num-input.cqf-readonly {
+  background: #f1f5f1;
+}
+
+/* VAT badge */
+.cqf-vat-cell {
+  text-align: center;
+}
+
+.cqf-vat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.cqf-vat-yes {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.cqf-vat-no {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Actions cell */
+.cqf-actions-cell {
+  text-align: center;
+  white-space: nowrap;
+  min-width: 110px;
+  width: 110px;
+}
+
+.cqf-actions-cell > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.cqf-discount-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #1e7d4e !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.15s, opacity 0.15s;
+  white-space: nowrap;
+  visibility: visible !important;
+  opacity: 1;
+}
+
+.cqf-discount-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.cqf-discount-btn:not(:disabled):hover {
+  background: #155d39 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 125, 78, 0.35);
+}
+
+.cqf-remove-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 8px;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  border-radius: 5px;
+  color: #dc2626;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cqf-remove-btn:hover {
+  background: #fecaca;
+  color: #b91c1c;
+}
+
+/* ── Totals ── */
+.cqf-totals-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
+.cqf-totals-card {
+  width: 280px;
+  background: #f8fafc;
+  border: 1px solid #e0ede5;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cqf-totals-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.cqf-totals-row span {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.cqf-totals-net {
+  border-top: 1.5px solid #b7dfbf;
+  padding-top: 6px;
+  margin-top: 2px;
+  font-weight: 700;
+  color: #1a5c35;
+}
+
+.cqf-total-input {
+  width: 110px;
+  text-align: right;
+  background: #fff !important;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── Payment Terms ── */
+.cqf-payment-terms-field {
+  padding: 14px;
+  gap: 8px;
+}
+
+.cqf-payment-custom-input {
+  width: 100%;
+  min-height: 70px;
+  margin-top: 8px;
+  padding: 8px 10px;
+  border: 1px solid #3D8C4F;
+  border-radius: 6px;
+  font-size: 13px;
+  resize: vertical;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cqf-payment-custom-input:focus {
+  border-color: #1e7d4e;
+  box-shadow: 0 0 0 3px rgba(30, 125, 78, 0.15);
+  outline: none;
+}
+
+/* ── Footer ── */
+.cqf-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid #e8f5ec;
+  margin-top: 4px;
+}
+
+.cqf-save-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 22px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #fff;
+  background: #1e7d4e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cqf-save-btn:hover:not(:disabled) {
+  background: #155d39;
+}
+
+.cqf-save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cqf-cancel-btn {
+  padding: 9px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #64748b;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cqf-cancel-btn:hover {
+  background: #e2e8f0;
+  color: #374151;
+}
+
+@media (max-width: 700px) {
+  .cqf-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cqf-fields-grid {
+    grid-template-columns: 1fr;
+  }
+  .cqf-fields-row {
+    flex-direction: column;
+  }
+}
+
+/* ── Create Customized Item popup (compact) ───────────────────────────── */
+.cqf-mini-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 10000;
+}
+
+.cqf-mini-modal {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  padding: 12px 16px 14px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+}
+
+.cqf-mini-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e3ece6;
+}
+
+.cqf-mini-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e7d4e;
+}
+
+.cqf-mini-modal .cqf-close-btn {
+  width: 26px;
+  height: 26px;
+  font-size: 17px;
+  border-radius: 6px;
+}
+
+.cqf-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+  align-items: start;
+}
+
+.cqf-mini-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cqf-mini-full {
+  grid-column: 1 / -1;
+}
+
+.cqf-mini-modal .cqf-label {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #33475b;
+  margin: 0 0 3px;
+  line-height: 1.2;
+}
+
+.cqf-mini-modal input[type="text"],
+.cqf-mini-modal input[type="number"],
+.cqf-mini-modal select,
+.cqf-mini-modal textarea {
+  width: 100%;
+  height: 30px;
+  padding: 4px 8px;
+  font-size: 12.5px;
+  border: 1px solid #3D8C4F;
+  border-radius: 6px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cqf-mini-modal textarea {
+  height: 52px;
+  min-height: 52px;
+  padding: 6px 8px;
+  resize: vertical;
+}
+
+.cqf-mini-modal .input-error {
+  border-color: #dc2626 !important;
+}
+
+.cqf-mini-modal .error-message {
+  margin: 2px 0 0;
+  font-size: 10.5px;
+  line-height: 1.25;
+}
+
+.cqf-mini-check {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #33475b;
+  cursor: pointer;
+}
+
+.cqf-mini-modal .cqf-mini-check input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: #3D8C4F;
+  cursor: pointer;
+}
+
+.cqf-mini-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #e3ece6;
+}
+
+.cqf-mini-footer .cqf-save-btn,
+.cqf-mini-footer .cqf-cancel-btn {
+  padding: 6px 16px;
+  font-size: 12.5px;
+}
+
+@media (max-width: 560px) {
+  .cqf-mini-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.quotation-container .filter-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+
+.quotation-container .filter-section > * {
+  flex-shrink: 1;
+}
+
+.quotation-container .filter-section .clear-filter-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}

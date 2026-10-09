@@ -1,0 +1,265 @@
+/* ============================================================
+   Shared status pipeline — compact track of stage counts.
+   Mirrors the invoice approval pipeline (qip-*), unscoped so any
+   list screen can drop <StatusPipeline /> in above its table.
+   ============================================================ */
+.sp-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e8edf2;
+  border-radius: 12px;
+  padding: 7px 10px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.02),
+    0 4px 18px rgba(15, 23, 42, 0.05);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+/* Hero accent strip */
+.sp-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3d8c4f, #57b770 45%, #3b82f6);
+}
+
+/* Optional header — title, active-stage chip and total count */
+.sp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 4px 2px 8px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.sp-header-text {
+  min-width: 0;
+}
+
+.sp-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.sp-sub {
+  margin: 2px 0 0;
+  font-size: 11px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.sp-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sp-active-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border: 1px solid;
+  border-radius: 99px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.sp-active-chip:hover {
+  filter: brightness(0.94);
+}
+
+.sp-active-chip-count {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.sp-active-chip-x {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.sp-total-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  padding: 5px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 99px;
+  background: #f8fafc;
+}
+
+.sp-total-num {
+  font-size: 15px;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.sp-total-lbl {
+  font-size: 9px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sp-flow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+}
+
+.sp-node {
+  flex: 1 1 0;
+  min-width: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 6px;
+  border-radius: 10px;
+  border: 1.5px solid transparent;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.22s ease;
+}
+
+.sp-node:hover {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.sp-node.is-clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Stage that a single searched record sits in */
+.sp-node.is-focused {
+  background: #f8fafc;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Stage the user clicked — the list is filtered down to it */
+.sp-node.is-active {
+  background: #f8fafc;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.sp-node.is-active .sp-label {
+  color: #0f172a;
+}
+
+.sp-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.22s ease;
+}
+
+.sp-node:hover .sp-badge,
+.sp-node.is-focused .sp-badge,
+.sp-node.is-active .sp-badge {
+  transform: scale(1.08);
+}
+
+.sp-num {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.sp-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.sp-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sp-node.stage-proforma .sp-label {
+  max-width: 104px;
+  white-space: normal;
+  line-height: 1.15;
+}
+
+.sp-pct {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.sp-track {
+  width: 76%;
+  height: 3px;
+  background: #f1f5f9;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.sp-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sp-connector {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 2px;
+  margin-bottom: 8px;
+}
+
+.sp-line {
+  width: 10px;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.sp-arrow {
+  opacity: 0.55;
+  flex-shrink: 0;
+}

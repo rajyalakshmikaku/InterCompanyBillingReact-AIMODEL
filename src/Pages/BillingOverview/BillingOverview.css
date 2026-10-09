@@ -1,0 +1,1025 @@
+.quotationinvoice-approval-container {
+  margin-left: 300px;  
+  padding: 30px;
+  margin-top: -30px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+.quotationInvoiceapprovalheading{
+  margin-bottom: 20px;
+  margin-top: 100px;
+  color: #3D8C4F;
+}
+
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.quotation-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.quotation-table th,
+.quotation-table td {
+  padding: 12px 15px;
+  border: 1px solid black;
+  text-align: left;
+}
+
+.quotation-table th {
+  background-color: gray;
+}
+
+.status {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status.approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+.status.proforma-invoice-generated {
+  background-color: #e0f2fe;
+  color: #075985;
+}
+
+.status.invoice-generated {
+  background-color: #ede9fe;
+  color: #5b21b6;
+}
+
+.status.cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status.paid {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.btn {
+  padding: 6px 10px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.quotation-view-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.quotation-view-table th,
+.quotation-view-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.quotation-view-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-approve {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-reject {
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-approve:hover {
+  background-color: #218838;
+}
+
+.btn-reject:hover {
+  background-color: #c82333;
+}
+
+.quotationapproval-view-info .label {
+  width: 140px; /* Adjust based on label length */
+  font-weight: bold;
+  color: #333;
+}
+.pagination {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  
+  
+  
+}
+
+.filter-bar input {
+  flex: 1 1 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.filter-bar input[type="date"] {
+  padding-right: 6px;
+}
+
+.filter-bar input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.company-logo-corner {
+  position: absolute;
+  top: 90px;      /* distance from top */
+  right: 20px;    /* distance from right */
+  width: 100px;   /* adjust size */
+  height: auto;
+}
+.status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.status.paid {
+    background-color: #28a745; /* green */
+}
+
+.status.pending {
+    background-color: #ffc107; /* orange */
+}
+
+.status.cancelled {
+    background-color: #dc3545; /* red */
+}
+.cancel-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.cancel-popup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.paid-btn {
+  background: green;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.creditnote-btn {
+  background: rgb(52, 141, 209);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.creditnoteview-btn {
+  background: rgb(52, 141, 209);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background:#e64f4f;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cancel-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* dim background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.cancel-popup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 500px;   /* increase width */
+  max-width: 90%; /* responsive */
+  min-height: 250px; /* more height */
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* addresscss */
+.quotation-view-info .info-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.quotation-view-info .label {
+  min-width: 310px;     /* same width as others */
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.info-row .colon {
+  margin: 0 0px;
+}
+
+.info-row .values {
+  flex: 1;
+  word-break: break-word;
+  line-height: 1.6;
+}
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.popup-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.download-btn:hover {
+    opacity: 0.9;
+}
+
+.download-icon {
+    font-size: 14px;
+}
+
+.quotation-view-close-btn {
+    background: transparent;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.action-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+}
+
+.icon-spinner {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
+    border: 3px solid #d1d5db;
+    border-top: 3px solid #16a34a;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 0.7s linear infinite;
+    box-sizing: border-box;
+}
+
+.mini-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #dcdcdc;
+    border-top: 2px solid #007bff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 0.7s linear infinite;
+    margin: auto;
+}
+
+.download-spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid #d1d5db;
+    border-top: 3px solid #2563eb;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+}
+
+/* ============================================================
+   Invoice Approval List — modern professional polish
+   (scoped under #invoice-approval-page to beat global.css)
+   ============================================================ */
+
+#invoice-approval-page.quotationinvoice-approval-container {
+  margin-left: 0;
+  margin-top: 0;
+  padding: 28px;
+  font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #f4f7f5;
+  min-height: 100vh;
+}
+
+#invoice-approval-page .list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+#invoice-approval-page .quotationInvoiceapprovalheading {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+}
+
+/* Quotation / Invoice switch + Help, same grouping as the dashboard header */
+#invoice-approval-page .vql-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+#invoice-approval-page .vql-type-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+/* Filter bar */
+#invoice-approval-page .filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02), 0 4px 16px rgba(0,0,0,0.02);
+}
+
+#invoice-approval-page .filter-section input,
+#invoice-approval-page .filter-section select {
+  flex: 1 1 180px;
+  min-width: 160px;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #374151;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#invoice-approval-page .filter-section input:focus,
+#invoice-approval-page .filter-section select:focus {
+  border-color: #3d8c4f;
+  box-shadow: 0 0 0 3px rgba(61, 140, 79, 0.12);
+}
+
+#invoice-approval-page .filter-section input::placeholder {
+  color: #9ca3af;
+}
+
+/* Table card */
+#invoice-approval-page .invoice-approval-list {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02), 0 4px 20px rgba(0,0,0,0.03);
+  margin-bottom: 24px;
+}
+
+/* Professional data table */
+#invoice-approval-page .data-table {
+  width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  font-size: 13px !important;
+  background: #ffffff !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+#invoice-approval-page .data-table thead tr {
+  background: #f8fafc !important;
+}
+
+#invoice-approval-page .data-table th {
+  padding: 15px 16px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+  color: #64748b !important;
+  background: #f8fafc !important;
+  border: none !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  /* text-align: left !important; */
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#invoice-approval-page .data-table th:first-child {
+  padding-left: 22px !important;
+}
+#invoice-approval-page .data-table th:last-child {
+  padding-right: 22px !important;
+}
+
+#invoice-approval-page .data-table th:hover {
+  color: #3d8c4f !important;
+  background: #f1f8f3 !important;
+}
+
+#invoice-approval-page .data-table td {
+  padding: 15px 16px !important;
+  color: #334155 !important;
+  border: none !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  vertical-align: middle !important;
+  font-size: 13px !important;
+}
+
+#invoice-approval-page .data-table td:first-child {
+  padding-left: 22px !important;
+  font-weight: 600 !important;
+  color: #0f172a !important;
+}
+#invoice-approval-page .data-table td:last-child {
+  padding-right: 22px !important;
+}
+
+/* Zebra striping for readability */
+#invoice-approval-page .data-table tbody tr:nth-child(even) td {
+  background: #fcfdfe !important;
+}
+
+#invoice-approval-page .data-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+#invoice-approval-page .data-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+#invoice-approval-page .data-table tbody tr:hover td {
+  background: #f1f8f3 !important;
+}
+
+/* Modern status pills — soft tint + leading dot, green-theme aligned */
+#invoice-approval-page .status-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  min-width: auto !important;
+  padding: 5px 12px 5px 10px !important;
+  border-radius: 99px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+  line-height: 1.4 !important;
+}
+
+#invoice-approval-page .status-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04);
+}
+
+#invoice-approval-page .status-invoicecreated,
+#invoice-approval-page .status-created {
+  background: #fff7ed !important;
+  color: #c2410c !important;
+  border-color: #fed7aa !important;
+}
+
+#invoice-approval-page .status-ordercompleted,
+#invoice-approval-page .status-paid {
+  background: #ecfdf3 !important;
+  color: #15803d !important;
+  border-color: #a6e9c1 !important;
+}
+
+#invoice-approval-page .status-cancelled,
+#invoice-approval-page .status-rejected {
+  background: #fef2f2 !important;
+  color: #b91c1c !important;
+  border-color: #fecaca !important;
+}
+
+#invoice-approval-page .status-refund {
+  background: #f5f3ff !important;
+  color: #6d28d9 !important;
+  border-color: #ddd6fe !important;
+}
+
+#invoice-approval-page .status-creditnote,
+#invoice-approval-page .status-credit-note-created {
+  background: #f1f8f3 !important;
+  color: #2e6c3b !important;
+  border-color: #a3d9b4 !important;
+}
+
+/* Quotation-only states — this screen lists every status, not just the
+   invoice ones, so the quotation lifecycle needs its own pills. */
+#invoice-approval-page .status-expired {
+  background: #f8fafc !important;
+  color: #475569 !important;
+  border-color: #e2e8f0 !important;
+}
+
+#invoice-approval-page .status-proforma {
+  background: #ecfeff !important;
+  color: #0e7490 !important;
+  border-color: #a5f3fc !important;
+}
+
+#invoice-approval-page .status-invoicegenerated {
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border-color: #bfdbfe !important;
+}
+
+#invoice-approval-page .status-overdue {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+  border-color: #fcd34d !important;
+}
+
+/* Action icon buttons — unified corporate ghost style that fits the green theme.
+   Scoped under #invoice-approval-page for unbeatable specificity. */
+#invoice-approval-page .action-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#invoice-approval-page td .action-icon,
+#invoice-approval-page .action-container .action-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 34px !important;
+  height: 34px !important;
+  padding: 8px !important;
+  margin: 0 !important;
+  border-radius: 10px !important;
+  font-size: 15px !important;
+  cursor: pointer;
+  border: 1px solid #e2e8f0 !important;
+  background: #ffffff !important;
+  color: #64748b !important;
+  fill: currentColor !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03) !important;
+  transition: transform 0.15s ease, background-color 0.15s ease,
+              border-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+#invoice-approval-page td .action-icon svg,
+#invoice-approval-page .action-container .action-icon svg {
+  color: currentColor !important;
+  fill: currentColor !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#invoice-approval-page td .action-icon:hover,
+#invoice-approval-page .action-container .action-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.10) !important;
+}
+
+/* View / info — blue */
+#invoice-approval-page td .action-icon.view-icon,
+#invoice-approval-page td .action-icon.creditview-icon,
+#invoice-approval-page td .action-icon.creditnoteview-icon {
+  color: #2563eb !important;
+  background: #eff6ff !important;
+  border-color: #dbeafe !important;
+}
+#invoice-approval-page td .action-icon.view-icon:hover,
+#invoice-approval-page td .action-icon.creditview-icon:hover,
+#invoice-approval-page td .action-icon.creditnoteview-icon:hover {
+  color: #ffffff !important;
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+}
+
+/* Download / document — warm amber */
+#invoice-approval-page td .action-icon.download-icon,
+#invoice-approval-page td .action-icon.creditdownload-icon {
+  color: #d97706 !important;
+  background: #fffbeb !important;
+  border-color: #fde68a !important;
+}
+#invoice-approval-page td .action-icon.download-icon:hover,
+#invoice-approval-page td .action-icon.creditdownload-icon:hover {
+  color: #ffffff !important;
+  background: #d97706 !important;
+  border-color: #d97706 !important;
+}
+
+/* Paid / approve — success green */
+#invoice-approval-page td .action-icon.invoicepaid-icon,
+#invoice-approval-page td .action-icon.paid-icon {
+  color: #16a34a !important;
+  background: #ecfdf3 !important;
+  border-color: #a6e9c1 !important;
+}
+#invoice-approval-page td .action-icon.invoicepaid-icon:hover,
+#invoice-approval-page td .action-icon.paid-icon:hover {
+  color: #ffffff !important;
+  background: #16a34a !important;
+  border-color: #16a34a !important;
+}
+
+/* Cancel — danger red */
+#invoice-approval-page td .action-icon.invoicecancel-icon,
+#invoice-approval-page td .action-icon.cancel-icon {
+  color: #dc2626 !important;
+  background: #fef2f2 !important;
+  border-color: #fecaca !important;
+}
+#invoice-approval-page td .action-icon.invoicecancel-icon:hover,
+#invoice-approval-page td .action-icon.cancel-icon:hover {
+  color: #ffffff !important;
+  background: #dc2626 !important;
+  border-color: #dc2626 !important;
+}
+
+/* Credit note — indigo so it stands apart from the green family */
+#invoice-approval-page td .action-icon.credit-icon {
+  color: #4f46e5 !important;
+  background: #eef2ff !important;
+  border-color: #c7d2fe !important;
+}
+#invoice-approval-page td .action-icon.credit-icon:hover {
+  color: #ffffff !important;
+  background: #4f46e5 !important;
+  border-color: #4f46e5 !important;
+}
+
+/* No-action placeholder */
+#invoice-approval-page .no-action {
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+/* Cancel popup */
+#invoice-approval-page .cancel-popup-overlay {
+  background: rgba(8, 16, 36, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+#invoice-approval-page .cancel-popup {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+  padding: 24px;
+}
+
+#invoice-approval-page .cancel-popup h4 {
+  margin: 0 0 16px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+#invoice-approval-page .cancel-popup textarea {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 13px;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#invoice-approval-page .cancel-popup textarea:focus {
+  outline: none;
+  border-color: #3d8c4f;
+  box-shadow: 0 0 0 3px rgba(61, 140, 79, 0.12);
+}
+
+/* ============================================================
+   Invoice pipeline — same design language as the Quotation Dashboard
+   pipeline (qdb-*), scoped to this screen. Display only.
+   ============================================================ */
+#invoice-approval-page .qip-pipeline-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e8edf2;
+  border-radius: 12px;
+  padding: 7px 10px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.02),
+    0 4px 18px rgba(15, 23, 42, 0.05);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+/* Hero accent strip */
+#invoice-approval-page .qip-pipeline-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3d8c4f, #57b770 45%, #3b82f6);
+}
+
+/* The horizontal flow row */
+#invoice-approval-page .qip-pipeline-flow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+}
+
+/* Each stage node */
+#invoice-approval-page .qip-flow-node {
+  flex: 1 1 0;
+  min-width: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 6px;
+  border-radius: 10px;
+  border: 1.5px solid transparent;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.22s ease;
+}
+
+#invoice-approval-page .qip-flow-node:hover {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Stage that a single searched invoice sits in */
+#invoice-approval-page .qip-flow-node.is-focused {
+  background: #f8fafc;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+/* Circular badge */
+#invoice-approval-page .qip-flow-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.22s ease;
+}
+
+#invoice-approval-page .qip-flow-node:hover .qip-flow-badge,
+#invoice-approval-page .qip-flow-node.is-focused .qip-flow-badge {
+  transform: scale(1.08);
+}
+
+#invoice-approval-page .qip-flow-num {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+/* Label + percentage */
+#invoice-approval-page .qip-flow-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+#invoice-approval-page .qip-flow-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#invoice-approval-page .qip-flow-pct {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Progress bar */
+#invoice-approval-page .qip-flow-track {
+  width: 76%;
+  height: 3px;
+  background: #f1f5f9;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+#invoice-approval-page .qip-flow-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Connector between nodes */
+#invoice-approval-page .qip-flow-connector {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 2px;
+  margin-bottom: 8px;
+}
+
+#invoice-approval-page .qip-flow-line {
+  width: 10px;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+#invoice-approval-page .qip-flow-arrow {
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  #invoice-approval-page .data-table th,
+  #invoice-approval-page .data-table td {
+    padding: 12px 14px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #invoice-approval-page.quotationinvoice-approval-container {
+    padding: 18px;
+  }
+
+  #invoice-approval-page .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #invoice-approval-page .filter-section input,
+  #invoice-approval-page .filter-section select {
+    width: 100%;
+  }
+
+  #invoice-approval-page .data-table th,
+  #invoice-approval-page .data-table td {
+    padding: 10px 12px !important;
+  }
+}

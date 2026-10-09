@@ -1,0 +1,198 @@
+.create-item-box {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+.create-item-heading {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.create-item-form-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn_receiving {
+   padding: 8px 18px;
+    margin-right: 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+}
+.receiving-filter-btn{
+  margin-left: 10px;
+  padding: 7px 9px;
+  background-color: gray;
+  color: white;
+  width: 15%;
+
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: #fff;
+}
+.Receive-actions {
+  justify-content: flex-end; /* align to right */
+  gap: 8px;                  /* spacing between buttons */
+  margin-top: 16px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.modal-content button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.input-error {
+  border: 2px solid #d9534f !important; /* red */
+  box-shadow: none !important;
+}
+
+.input-valid {
+  border: 2px solid #28a745 !important; /* green */
+  box-shadow: none !important;
+}
+
+
+.logo-input-box {
+  width: 250px !important;      /* Increase width */
+  padding: 4px;                 /* Optional */
+}
+
+/* Make textarea look exactly like input */
+.formlabel-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 5px;
+  border: 1px solid #28a745 !important;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+
+  /* Important part */
+  resize: none;        /* disable resize */
+  height: 44px;        /* same height as input */
+  line-height: 1.4;
+}
+textarea.input-error {
+  border-color: red !important;
+}
+.receiving-actions {
+  grid-column: span 4 !important;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: -20px;
+}
+.receiving-actions .btn {
+  min-width: 65px;
+    margin-top: 30px;
+    height: 38px;
+}
+ .button {
+  min-width: 120px;  /* Keep button width consistent */
+  margin-top: 20px;
+}
+.service-cell {
+  width: 250px;        /* fixed width */
+  max-width: 250px;
+}
+.receiv-actions {
+  grid-column: span 4 !important;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 1px;
+}
+.receiv-actions .btn {
+   min-width: auto;
+    height: 35px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+.btn-succes {
+    background-color: #1E7D4E;
+    padding: 8px 18px;
+    margin-right: 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11.8px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Bank Information section only */
+.bank-info-section {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+}
+
+.bank-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.bank-info-grid .formlabel-group {
+  width: 100%;
+}
+
+.bank-info-grid .formlabel-group:last-child {
+  grid-column: span 1;
+}

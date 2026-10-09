@@ -1,0 +1,220 @@
+.createdepart-item-box {
+
+
+
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+  border: 1px solid black;
+  background: #aca2a23b;
+}
+
+.create-item-heading {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.createdepart-item-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.createdepart-item-form-row input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  min-width: 20px; /* prevents shrinking too much */
+}
+
+.departform-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 17px;
+}
+
+ 
+.departform-actions .btn-lg {
+   padding: 8px 18px;
+  font-size: 15px;    
+  border-radius: 6px;
+}
+
+.btn_department {
+    padding: 8px 18px;
+    margin-right: 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-success {
+  background: #28a745;
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color:  #28a745;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color:  #dc3545;
+}
+
+/* edit & delete */
+.icon-btn {
+  background: rgb(237, 235, 235);
+  border: none !important;
+  padding: 7px;
+  cursor: pointer;
+ 
+}
+
+.icon-btn:hover,
+.icon-btn:focus {
+  background:rgb(237, 235, 235);
+  box-shadow:rgb(237, 235, 235);    
+}
+
+
+
+
+
+.Inventory-filter-btn{
+  margin-left: 10px;
+  padding: 7px 9px;
+  background-color: gray;
+  color: white;
+  width: 15%;
+}
+
+
+.Inventoryform-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 45%;
+}
+.label {
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin: 4px 0;
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.formlabel-group label {
+    display: block;
+    font-weight: normal;
+    margin-bottom: 5px;
+    font-size:16px ;
+}
+
+.required {
+  color: red;
+}
+
+.form-control {
+  width: 90%;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* .input-error {
+  border-color: red;
+  background: #ffecec;
+} */
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+
+.department-title {
+  text-align: left;
+  font-size: 23px;
+  font-weight: bold;
+ color: rgb(61, 140, 79);
+  background-color: transparent; /* PRASA theme green */
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-left: -1%;
+  margin-top: -30px;
+}
+
+
+.create-title {
+  text-align: left;
+  font-size: 21px;
+  font-weight: bold;
+ color: rgb(61, 140, 79);
+  background-color: transparent; 
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-left: -1%;
+  margin-top: 2px;
+}
+
+.Edit-title {
+  text-align: left;
+  font-size: 21px;
+  font-weight: bold;
+ color: rgb(61, 140, 79);
+  background-color: transparent; 
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-left: -1%;
+  margin-top: 2px;
+}
+
+
+
+.radio-group-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+   margin-left: 20px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-group div {
+  display: flex;
+  gap: 10px;
+}

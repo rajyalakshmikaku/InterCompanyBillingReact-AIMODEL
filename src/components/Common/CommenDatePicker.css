@@ -1,0 +1,76 @@
+/* Root FormControl */
+.common-date-picker.MuiFormControl-root {
+  width: 200px;
+}
+
+/* Main outlined input */
+.common-date-picker .MuiPickersOutlinedInput-root {
+  height: 40px;
+  border-radius: 6px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding-right: 6px;
+}
+
+/* DD / MM / YYYY text */
+.common-date-picker
+  .MuiPickersSectionList-sectionContent {
+  font-size: 14px;
+  color: #3D8C4F;
+  padding: 0 2px;
+}
+
+/* Separator (/ /) */
+.common-date-picker
+  .MuiPickersInputBase-sectionSeparator {
+  color: #3D8C4F;
+}
+
+/* Outline border */
+.common-date-picker
+  .MuiPickersOutlinedInput-notchedOutline {
+  border-color: #3D8C4F;
+}
+
+.common-date-picker:hover
+  .MuiPickersOutlinedInput-notchedOutline {
+  border-color: #3D8C4F;
+}
+
+.common-date-picker
+  .MuiPickersOutlinedInput-root.Mui-focused
+  .MuiPickersOutlinedInput-notchedOutline {
+  border-color: #3D8C4F;
+  border-width: 1px;
+}
+
+/* Calendar icon */
+.common-date-picker
+  .MuiIconButton-root {
+  color: #3D8C4F;
+  padding: 4px;
+}
+
+/* Align sections vertically */
+.common-date-picker
+  .MuiPickersSectionList-root {
+  align-items: center;
+}
+
+/* Hide hidden input used by picker */
+.common-date-picker
+  .MuiPickersInputBase-input[aria-hidden='true'] {
+  display: none;
+}
+
+
+.common-input {
+  width: 200px;
+  width: 230px;
+  height: 38px;
+  padding: 6px 10px;
+  border: 1px solid #3D8C4F;
+  border-radius: 4px;
+  font-size: 14px;
+}

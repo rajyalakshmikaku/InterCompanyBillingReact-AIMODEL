@@ -1,0 +1,798 @@
+/* ============================================================
+   GLOBAL DESIGN SYSTEM
+   Single source of truth for cross-screen visual consistency.
+   Loaded last (see index.js) so it wins over per-page CSS.
+   Mirrors the tokens in src/theme/tokens.js.
+
+   Goals enforced here:
+     - One font family + base size on every screen
+     - One colour combination (brand green + neutrals)
+     - Inputs / selects / textareas look identical everywhere
+     - Every text input shows a green border (modern focus ring)
+   ============================================================ */
+
+:root {
+  /* Brand green */
+  --ds-brand: #3d8c4f;
+  --ds-brand-dark: #2e6c3b;
+  --ds-brand-light: #e8f3eb;
+  --ds-brand-soft: #f1f8f3;
+
+  /* Green used for the resting input border */
+  --ds-input-border: #d1d5db;
+  --ds-input-border-green: #79b98c;
+  --ds-input-bg: #ffffff;
+  --ds-input-focus-ring: rgba(61, 140, 79, 0.18);
+
+  /* Neutrals */
+  --ds-ink: #0f172a;
+  --ds-ink-soft: #64748b;
+  --ds-line: #e2e8f0;
+  --ds-surface: #ffffff;
+  --ds-surface-muted: #f8fafc;
+  --ds-bg: #f4f7f5;
+
+  /* Semantic */
+  --ds-success: #2e7d32;
+  --ds-warning: #ed6c02;
+  --ds-danger: #e0414a;
+  --ds-danger-dark: #c62828;
+  --ds-info: #0277bd;
+
+  /* Shape & type */
+  --ds-radius: 10px;
+  --ds-radius-lg: 12px;
+  --ds-radius-sm: 8px;
+  --ds-font: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --ds-font-size: 14px;
+}
+
+/* ---- Typography: one family + size for every screen ---- */
+html,
+body {
+  font-family: var(--ds-font);
+  font-size: var(--ds-font-size);
+  color: var(--ds-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Native form controls do NOT inherit font — force it everywhere */
+input,
+select,
+textarea,
+button,
+optgroup,
+option {
+  font-family: var(--ds-font) !important;
+  font-size: var(--ds-font-size);
+}
+
+/* ============================================================
+   INPUTS / SELECTS / TEXTAREAS — identical on every screen
+   ============================================================ */
+input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([type='color']):not([type='submit']):not([type='button']):not([type='reset']):not([type='image']),
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: var(--ds-font-size) !important;
+  line-height: 1.4;
+  color: var(--ds-ink);
+  border: 1.5px solid var(--ds-input-border-green) !important;
+  border-radius: var(--ds-radius) !important;
+  box-shadow: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+textarea {
+  width: 100%;
+  min-height: 65px;
+  resize: vertical;
+}
+
+/* Placeholder consistency */
+input::placeholder,
+textarea::placeholder {
+  color: #9aa5b1;
+  opacity: 1;
+}
+
+/* Hover — slightly stronger green */
+input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([type='color']):not([type='submit']):not([type='button']):not([type='reset']):not([type='image']):hover,
+select:hover,
+textarea:hover {
+  border-color: var(--ds-brand) !important;
+}
+
+/* Focus — full brand green + soft glow ring (modern look) */
+input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([type='color']):not([type='submit']):not([type='button']):not([type='reset']):not([type='image']):focus,
+select:focus,
+textarea:focus {
+  border-color: var(--ds-brand) !important;
+  box-shadow: 0 0 0 3px var(--ds-input-focus-ring) !important;
+  outline: none !important;
+  background-color: var(--ds-surface) !important;
+}
+
+/* Disabled / readonly */
+input:disabled,
+select:disabled,
+textarea:disabled,
+input[readonly],
+textarea[readonly] {
+  background-color: #f1f4f2 !important;
+  color: var(--ds-ink-soft);
+  border-color: var(--ds-line) !important;
+  cursor: not-allowed;
+}
+
+/* Custom green dropdown arrow for native selects */
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%233d8c4f' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 12px center !important;
+  padding-right: 36px !important;
+}
+
+/* Keep checkboxes / radios tinted brand green */
+input[type='checkbox'],
+input[type='radio'] {
+  accent-color: var(--ds-brand);
+  width: auto;
+}
+
+/* ============================================================
+   ERROR STATES — must override the green border above.
+   Placed after the green rule so red wins for invalid fields.
+   ============================================================ */
+.input-error,
+.error-border,
+.error-input,
+.invalid-input,
+input.input-error,
+select.input-error,
+textarea.input-error,
+input.error-border,
+select.error-border,
+textarea.error-border,
+input.invalid-input,
+select.invalid-input,
+textarea.invalid-input {
+  border: 1.5px solid var(--ds-danger) !important;
+  border-color: var(--ds-danger) !important;
+  
+}
+
+/* Make sure plain text inputs (type=text, number, etc.) also show
+   the red error border — this explicitly targets input elements
+   with the common error classes and forces border + box-shadow
+   to the danger colour. This is more specific than the generic
+   input rule above which uses several :not() selectors. */
+input.input-error,
+input.error-border,
+input.error-input,
+input.invalid-input,
+input.inventoryitem-input.error-border,
+input.inventoryitem-input.error-input,
+input.inventoryitem-input.invalid-input,
+select.input-error,
+select.error-border,
+select.error-input,
+select.invalid-input,
+textarea.input-error,
+textarea.error-border,
+textarea.error-input,
+textarea.invalid-input {
+  border: 1.5px solid var(--ds-danger) !important;
+  border-color: var(--ds-danger) !important;
+  box-shadow: none !important;
+}
+
+input.input-error:focus,
+input.error-border:focus,
+input.error-input:focus,
+input.invalid-input:focus,
+select.input-error:focus,
+select.error-border:focus,
+select.error-input:focus,
+select.invalid-input:focus,
+textarea.input-error:focus,
+textarea.error-border:focus,
+textarea.error-input:focus,
+textarea.invalid-input:focus {
+  box-shadow: 0 0 0 3px rgba(224, 65, 74, 0.12) !important;
+  outline: none !important;
+}
+
+/* Highest-specificity override: match the same long selector used above
+   so the danger border takes precedence over the generic green rule. */
+input.input-error:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([type='color']):not([type='submit']):not([type='button']):not([type='reset']):not([type='image']),
+input.error-border:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([type='color']):not([type='submit']):not([type='button']):not([type='reset']):not([type='image']),
+input.error-input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([type='color']):not([type='submit']):not([type='button']):not([type='reset']):not([type='image']),
+input.invalid-input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([type='color']):not([type='submit']):not([type='button']):not([type='reset']):not([type='image']),
+select.input-error,
+select.error-border,
+select.error-input,
+select.invalid-input,
+textarea.input-error,
+textarea.error-border,
+textarea.error-input,
+textarea.invalid-input {
+  border: 1.5px solid var(--ds-danger) !important;
+  border-color: var(--ds-danger) !important;
+  box-shadow: none !important;
+}
+
+input.input-error:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([type='color']):not([type='submit']):not([type='button']):not([type='reset']):not([type='image']):focus,
+input.error-border:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([type='color']):not([type='submit']):not([type='button']):not([type='reset']):not([type='image']):focus,
+input.error-input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([type='color']):not([type='submit']):not([type='button']):not([type='reset']):not([type='image']):focus,
+input.invalid-input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([type='color']):not([type='submit']):not([type='button']):not([type='reset']):not([type='image']):focus {
+  box-shadow: 0 0 0 3px rgba(224, 65, 74, 0.12) !important;
+  outline: none !important;
+}
+
+/* ============================================================
+   BUTTONS — one elegant system across screens
+   ============================================================ */
+button,
+.btn {
+  border-radius: var(--ds-radius);
+  cursor: pointer;
+  font-family: var(--ds-font);
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  padding: 9px 18px;
+  min-height: 38px;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: background-color 0.18s ease, border-color 0.18s ease,
+              color 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease;
+}
+
+button:disabled,
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+button:focus-visible,
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ds-input-focus-ring);
+}
+
+/* Primary — brand green */
+.btn-success,
+.btn-primary,
+.btn-save,
+.btn-submit,
+.filter-btn,
+.filter-section .filter-btn,
+.reportdashboard-search-btn,
+.generate-invoice-btn,
+.qdb-help-btn {
+  background: linear-gradient(180deg, var(--ds-brand) 0%, var(--ds-brand-dark) 100%) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 14px rgba(61, 140, 79, 0.22);
+}
+
+.btn-success:hover,
+.btn-primary:hover,
+.btn-save:hover,
+.btn-submit:hover,
+.filter-btn:hover,
+.filter-section .filter-btn:hover,
+.reportdashboard-search-btn:hover,
+.generate-invoice-btn:hover,
+.qdb-help-btn:hover {
+  background: linear-gradient(180deg, #459a5b 0%, var(--ds-brand-dark) 100%) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 6px 18px rgba(61, 140, 79, 0.30);
+  transform: translateY(-1px);
+}
+
+.btn-success:active,
+.btn-primary:active,
+.btn-save:active,
+.btn-submit:active,
+.filter-btn:active,
+.reportdashboard-search-btn:active,
+.generate-invoice-btn:active,
+.qdb-help-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* Secondary / outline */
+.clear-btn,
+.filter-section .clear-btn,
+.reportdashboard-clear-btn,
+.back-button,
+.help-btn,
+button.secondary,
+.btn-secondary {
+  background: #ffffff !important;
+  color: var(--ds-ink-soft) !important;
+  border-color: var(--ds-line) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.clear-btn:hover,
+.filter-section .clear-btn:hover,
+.reportdashboard-clear-btn:hover,
+.back-button:hover,
+.help-btn:hover,
+button.secondary:hover,
+.btn-secondary:hover {
+  background: var(--ds-surface-muted) !important;
+  border-color: var(--ds-input-border-green) !important;
+  color: var(--ds-brand) !important;
+  box-shadow: 0 2px 8px rgba(61, 140, 79, 0.10);
+}
+
+.clear-btn:active,
+.back-button:active,
+.help-btn:active,
+button.secondary:active,
+.btn-secondary:active {
+  background: var(--ds-brand-light) !important;
+}
+
+/* Danger */
+.btn-danger,
+button.danger,
+.btn.danger {
+  background: linear-gradient(180deg, var(--ds-danger) 0%, var(--ds-danger-dark) 100%) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 14px rgba(224, 65, 74, 0.22);
+}
+
+.btn-danger:hover,
+button.danger:hover,
+.btn.danger:hover {
+  background: linear-gradient(180deg, #e74c54 0%, var(--ds-danger-dark) 100%) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 6px 18px rgba(224, 65, 74, 0.28);
+  transform: translateY(-1px);
+}
+
+/* Ghost / subtle */
+.btn-ghost,
+button.ghost,
+.btn.ghost,
+.kpi-modal-close-btn,
+.quotation-view-close-btn {
+  background: transparent !important;
+  color: var(--ds-ink-soft) !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.btn-ghost:hover,
+button.ghost:hover,
+.btn.ghost:hover,
+.kpi-modal-close-btn:hover,
+.quotation-view-close-btn:hover {
+  background: #f1f5f9 !important;
+  color: var(--ds-ink) !important;
+}
+
+/* Pagination */
+.pagination button,
+.pagination-controls button,
+.pagination-buttons button {
+  min-width: 36px !important;
+  min-height: 36px !important;
+  padding: 0 6px !important;
+  border-radius: var(--ds-radius-sm) !important;
+  background: #ffffff !important;
+  color: var(--ds-ink-soft) !important;
+  border: 1px solid var(--ds-line) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02) !important;
+}
+
+.pagination button:hover:not(:disabled):not(.active),
+.pagination-controls button:hover:not(:disabled):not(.active),
+.pagination-buttons button:hover:not(:disabled):not(.active) {
+  background: var(--ds-brand-soft) !important;
+  border-color: var(--ds-input-border-green) !important;
+  color: var(--ds-brand) !important;
+}
+
+.pagination button.active,
+.pagination-controls button.active,
+.pagination-buttons button.active,
+.pagination button:disabled.active {
+  background: var(--ds-brand) !important;
+  border-color: var(--ds-brand) !important;
+  color: #ffffff !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(61, 140, 79, 0.22) !important;
+}
+
+.pagination button:disabled,
+.pagination-controls button:disabled,
+.pagination-buttons button:disabled {
+  opacity: 0.45;
+}
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+a {
+  color: var(--ds-brand);
+}
+a:hover {
+  color: var(--ds-brand-dark);
+}
+
+/* ============================================================
+   TABLE ACTION ICONS — one unified style across every module.
+   Approved design: 34px rounded ghost buttons with a colored
+   tint, subtle border, and fill-on-hover lift. Colors:
+     view / credit-view   → blue
+     download             → amber
+     paid / approve       → green
+     cancel / delete      → red
+     credit-note          → indigo
+   Works whether the element is an <svg> (react-icons) or a
+   <button> wrapping one.
+   ============================================================ */
+.action-icon {
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 34px !important;
+  height: 34px !important;
+  padding: 8px !important;
+  margin: 0 4px !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  color: #64748b !important;
+  fill: currentColor !important;
+  background: #ffffff !important;
+  cursor: pointer;
+  vertical-align: middle;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03) !important;
+  transition: transform 0.15s ease, background-color 0.15s ease,
+    border-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.action-icon > svg,
+.action-icon svg {
+  color: currentColor !important;
+  fill: currentColor !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.action-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.10) !important;
+}
+
+.action-icon:active {
+  transform: translateY(0);
+}
+
+/* KPI / Quotation modal spinner override — force blue loader where a parent
+   rule like ".app-main .spinner" sets a white head. Using high-specificity
+   selectors + !important ensures the quotation download spinner shows blue.
+ */
+.kpi-modal-panel .spinner,
+.kpi-modal-overlay .spinner,
+.kpi-modal-body .spinner,
+.quotation-dashboard-table .spinner,
+.quotation-dashboard-table td .spinner {
+  width: 18px !important;
+  height: 18px !important;
+  border: 3px solid #dbeafe !important; /* light track */
+  border-top-color: #2563eb !important; /* blue head */
+  border-radius: 50% !important;
+  animation: spin 0.8s linear infinite !important;
+  display: inline-block !important;
+}
+
+
+.action-icon:disabled,
+.action-icon.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Semantic colours — tinted ghost buttons */
+
+/* View / info — blue */
+.action-icon.view-icon,
+.action-icon.creditview-icon,
+.action-icon.creditnoteview-icon {
+  color: #2563eb !important;
+  background: #eff6ff !important;
+  border-color: #dbeafe !important;
+}
+.action-icon.view-icon:hover,
+.action-icon.creditview-icon:hover,
+.action-icon.creditnoteview-icon:hover {
+  color: #ffffff !important;
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+}
+
+/* Download — warm amber */
+.action-icon.download-icon,
+.action-icon.creditdownload-icon {
+  color: #d97706 !important;
+  background: #fffbeb !important;
+  border-color: #fde68a !important;
+}
+.action-icon.download-icon:hover,
+.action-icon.creditdownload-icon:hover {
+  color: #ffffff !important;
+  background: #d97706 !important;
+  border-color: #d97706 !important;
+}
+
+/* Proof of payment — violet, so the attachment reads apart from the
+   invoice/credit-note downloads sitting next to it */
+.action-icon.proof-icon {
+  color: #7c3aed !important;
+  background: #f5f3ff !important;
+  border-color: #ddd6fe !important;
+}
+.action-icon.proof-icon:hover {
+  color: #ffffff !important;
+  background: #7c3aed !important;
+  border-color: #7c3aed !important;
+}
+
+/* Edit / paid / approve — green */
+.action-icon.edit-icon,
+.action-icon.invoicepaid-icon,
+.action-icon.paid-icon,
+.edit-icon.action-icon {
+  color: #16a34a !important;
+  background: #ecfdf3 !important;
+  border-color: #a6e9c1 !important;
+}
+.action-icon.edit-icon:hover,
+.action-icon.invoicepaid-icon:hover,
+.action-icon.paid-icon:hover,
+.edit-icon.action-icon:hover {
+  color: #ffffff !important;
+  background: #16a34a !important;
+  border-color: #16a34a !important;
+}
+
+/* Cancel / delete — red */
+.action-icon.cancel-icon,
+.action-icon.delete-icon,
+.action-icon.invoicecancel-icon,
+.cancel-icon.action-icon,
+.delete-icon.action-icon {
+  color: #dc2626 !important;
+  background: #fef2f2 !important;
+  border-color: #fecaca !important;
+}
+.action-icon.cancel-icon:hover,
+.action-icon.delete-icon:hover,
+.action-icon.invoicecancel-icon:hover,
+.cancel-icon.action-icon:hover,
+.delete-icon.action-icon:hover {
+  color: #ffffff !important;
+  background: #dc2626 !important;
+  border-color: #dc2626 !important;
+}
+
+/* Settle a cancelled invoice (refund / credit note) — violet */
+.action-icon.invoicerefund-icon {
+  color: #7c3aed !important;
+  background: #f5f3ff !important;
+  border-color: #ddd6fe !important;
+}
+.action-icon.invoicerefund-icon:hover {
+  color: #ffffff !important;
+  background: #7c3aed !important;
+  border-color: #7c3aed !important;
+}
+
+/* Credit note — indigo */
+.action-icon.credit-icon {
+  color: #4f46e5 !important;
+  background: #eef2ff !important;
+  border-color: #c7d2fe !important;
+}
+.action-icon.credit-icon:hover {
+  color: #ffffff !important;
+  background: #4f46e5 !important;
+  border-color: #4f46e5 !important;
+}
+
+/* ============================================================
+   STATUS PILLS — soft tinted badges with a leading dot.
+   Works for .status-badge and common status-* modifiers.
+   ============================================================ */
+.status-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  min-width: auto !important;
+  padding: 5px 12px 5px 10px !important;
+  border-radius: 99px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+  line-height: 1.4 !important;
+}
+
+.status-badge::before,
+.status-ordercompleted::before,
+.status-paid::before,
+.status-created::before,
+.status-invoicecreated::before,
+.status-cancelled::before,
+.status-rejected::before,
+.status-creditnote::before,
+.status-credit-note-created::before,
+.status-refund::before,
+.status-pending::before,
+.status-approved::before,
+.status-draft::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04);
+}
+
+.status-invoicecreated,
+.status-created,
+.status-pending,
+.status-draft {
+  background: #fff7ed !important;
+  color: #c2410c !important;
+  border-color: #fed7aa !important;
+}
+
+.status-ordercompleted,
+.status-paid,
+.status-approved,
+.status-success,
+.status-active {
+  background: #ecfdf3 !important;
+  color: #15803d !important;
+  border-color: #a6e9c1 !important;
+}
+
+.status-cancelled,
+.status-rejected,
+.status-inactive,
+.status-failed,
+.status-error {
+  background: #fef2f2 !important;
+  color: #b91c1c !important;
+  border-color: #fecaca !important;
+}
+
+.status-creditnote,
+.status-credit-note-created {
+  background: #f1f8f3 !important;
+  color: #2e6c3b !important;
+  border-color: #a3d9b4 !important;
+}
+
+.status-refund {
+  background: #f5f3ff !important;
+  color: #6d28d9 !important;
+  border-color: #ddd6fe !important;
+}
+
+/* ============================================================
+   ALERTS / NOTIFICATIONS — always above the modal layer.
+   View popups & dialogs sit at z-index ~1200; alertifyjs and
+   any toast must stack above them so success/warning/error
+   messages (e.g. when generating a quotation) stay visible.
+   ============================================================ */
+.alertify,
+.alertify .ajs-dialog,
+.alertify-notifier,
+.ajs-modal {
+  z-index: 100000 !important;
+}
+.alertify .ajs-dimmer {
+  z-index: 99999 !important;
+}
+
+/* ============================================================
+   PAGINATION — unify the legacy per-page .pagination blocks
+   with the shared <Pagination> component look. flex-wrap +
+   visible overflow guarantees text like "1 of 4" is never
+   clipped (the Invoice Approval issue).
+   ============================================================ */
+.pagination,
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 14px;
+  overflow: visible;
+  text-align: right;
+}
+
+.pagination button,
+.pagination-controls button {
+  min-width: 34px;
+  height: 34px;
+  margin: 0 !important;
+  padding: 0 11px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #374151;
+  background: #ffffff !important;
+  border: 1px solid var(--ds-line) !important;
+  border-radius: 8px !important;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.pagination button:hover:not(:disabled):not(.active),
+.pagination-controls button:hover:not(:disabled):not(.active) {
+  background: var(--ds-brand-light) !important;
+  border-color: #cfe3d6 !important;
+  color: var(--ds-brand-dark);
+}
+
+.pagination button.active,
+.pagination-controls button.active,
+.pagination button:disabled.active {
+  background: var(--ds-brand) !important;
+  border-color: var(--ds-brand) !important;
+  color: #ffffff !important;
+  cursor: default;
+}
+
+.pagination button:disabled,
+.pagination-controls button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Any page-count / status text inside a pager stays fully visible */
+.pagination span,
+.pagination-controls span,
+.pagination-info {
+  white-space: nowrap;
+  overflow: visible;
+  font-size: 13px;
+  color: var(--ds-ink-soft);
+}
+

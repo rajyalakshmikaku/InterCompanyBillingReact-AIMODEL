@@ -1,0 +1,308 @@
+:root {
+  --lp-brand:       #3D8C4F;
+  --lp-brand-dark:  #2e6c3b;
+  --lp-brand-light: #e8f3eb;
+  --lp-ink:         #111827;
+  --lp-ink-soft:    #4b5563;
+  --lp-ink-muted:   #9ca3af;
+  --lp-line:        #e5e7eb;
+  --lp-surface:     #ffffff;
+  --lp-danger:      #e0414a;
+  --lp-danger-bg:   #fff1f2;
+  --lp-radius:      12px;
+  --lp-shadow:      0 20px 60px rgba(17,24,39,0.10), 0 4px 16px rgba(17,24,39,0.06);
+}
+
+/* ── Card ── */
+.lp-card {
+  width: 100%;
+  background: var(--lp-surface);
+  border-radius: 20px;
+  padding: 40px 40px 32px;
+  box-shadow: var(--lp-shadow);
+  border: 1px solid var(--lp-line);
+}
+
+/* ── Header ── */
+.lp-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.lp-icon-ring {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--lp-brand-light);
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(61,140,79,0.18);
+}
+
+
+.lp-title {
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--lp-brand-dark);
+  letter-spacing: -0.4px;
+}
+
+.lp-subtitle {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--lp-ink-soft);
+  line-height: 1.5;
+}
+
+/* ── Form ── */
+.lp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ── Field group ── */
+.lp-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lp-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--lp-ink);
+  letter-spacing: 0.1px;
+}
+
+/* ── Input wrapper (input + optional eye button) ── */
+.lp-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--lp-line);
+  border-radius: var(--lp-radius);
+  background: #f9fbfa;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  overflow: hidden;
+}
+
+.lp-input-wrap.has-icon .lp-input {
+  padding-left: 42px;
+}
+
+.lp-input-icon {
+  position: absolute;
+  left: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lp-ink-soft);
+  pointer-events: none;
+}
+
+.lp-input-wrap.focused {
+  border-color: var(--lp-brand);
+  background: #fff;
+  box-shadow: 0 0 0 3.5px rgba(61,140,79,0.14);
+}
+
+.lp-input-wrap.has-error {
+  border-color: var(--lp-danger);
+  background: var(--lp-danger-bg);
+  box-shadow: 0 0 0 3px rgba(224,65,74,0.12);
+}
+
+.lp-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14.5px;
+  color: var(--lp-ink);
+  padding: 13px 14px;
+  font-family: inherit;
+  min-width: 0;
+}
+
+.lp-input--padded {
+  padding-right: 42px;
+}
+
+.lp-input::placeholder {
+  color: var(--lp-ink-muted);
+}
+
+.lp-input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #f9fbfa inset !important;
+  -webkit-text-fill-color: var(--lp-ink) !important;
+}
+
+/* ── Eye toggle (positioned inside the field) ── */
+.lp-eye-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--lp-ink-muted);
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.lp-eye-btn:hover {
+  color: var(--lp-brand);
+}
+
+/* ── Error message ── */
+.lp-error {
+  font-size: 11.5px;
+  color: var(--lp-danger);
+  font-weight: 500;
+  display: block;
+}
+
+.lp-modal-description {
+  font-size: 13px;
+  color: var(--lp-ink-soft);
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+/* ── Forgot password row ── */
+.lp-forgot-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -6px;
+}
+
+.lp-forgot-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lp-brand);
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.lp-forgot-link:hover {
+  color: var(--lp-brand-dark);
+  text-decoration: underline;
+}
+
+/* ── Submit button ── */
+.lp-submit-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: var(--lp-radius);
+  background: linear-gradient(160deg, var(--lp-brand) 0%, var(--lp-brand-dark) 100%);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 8px 22px rgba(61,140,79,0.3);
+  transition: opacity 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.1px;
+  margin-top: 4px;
+}
+
+.lp-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ── Spinner ── */
+.lp-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: lp-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes lp-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Error alert ── */
+.lp-alert-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  background: var(--lp-danger-bg);
+  border: 1px solid rgba(224,65,74,0.25);
+  border-radius: 10px;
+  color: var(--lp-danger);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: -4px;
+}
+
+/* ── Footer text ── */
+.lp-footer-text {
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--lp-ink-soft);
+  margin: 28px 0 0;
+}
+
+.lp-link-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-weight: 700;
+  color: var(--lp-brand);
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.lp-link-btn:hover {
+  color: var(--lp-brand-dark);
+  text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+  .lp-card {
+    padding: 28px 20px 24px;
+    border-radius: 16px;
+  }
+  .lp-title {
+    font-size: 22px;
+  }
+}
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  display: none !important;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+input[type="password"]::-webkit-textfield-decoration-container {
+  display: none !important;
+}

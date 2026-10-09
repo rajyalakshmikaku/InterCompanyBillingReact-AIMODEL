@@ -1,0 +1,193 @@
+.user-verification-container {
+  min-height: 480px;
+}
+
+.verification-summary {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0 16px;
+  font-size: 14px;
+  color: #1f2d3d;
+}
+
+.verification-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.verify-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 7px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.approve-btn {
+  background: #2e7d32;
+  color: #fff;
+}
+
+.approve-btn:hover {
+  background: #256428;
+}
+
+.reject-btn {
+  background: #d32f2f;
+  color: #fff;
+}
+
+.reject-btn:hover {
+  background: #b71c1c;
+}
+.actions-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.approve-btn,
+.decline-btn {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.approve-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.decline-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.declined-reason-preview {
+  display: inline-block;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: help;
+}
+
+/* Mapping (role/company link) — blue */
+.action-icon.mapping-icon {
+  color: #2563eb !important;
+  background: #eff6ff !important;
+  border-color: #bfdbfe !important;
+}
+
+.action-icon.mapping-icon:hover {
+  color: #ffffff !important;
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+}
+
+/* ── Role & Company Mapping Modal ── */
+.mapping-modal .mapping-role-select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d0d7e2;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+  color: #1f2d3d;
+}
+
+.mapping-selected-count {
+  font-weight: 400;
+  font-size: 12px;
+  color: #64748b;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.mapping-company-search {
+  width: 100%;
+  padding: 7px 10px;
+  margin-bottom: 8px;
+  border: 1px solid #d0d7e2;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.mapping-select-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 2px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2d3d;
+  cursor: pointer;
+}
+
+.mapping-select-all input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.mapping-approve-note {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  color: #c2410c;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.mapping-company-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 4px 2px;
+}
+
+.mapping-company-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #1f2d3d;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mapping-company-item:hover {
+  border-color: #93c5fd;
+  background: #f0f7ff;
+}
+
+.mapping-company-item input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.mapping-no-companies {
+  grid-column: 1 / -1;
+  color: #64748b;
+  font-size: 13px;
+  padding: 10px 0;
+}
+
+.mapping-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 20px;
+  border-top: 1px solid #e2e8f0;
+}

@@ -1,0 +1,193 @@
+/* Page background center alignment */
+.edit-profile-container {
+  width: 700px;
+  max-width: 100%;
+  margin: 40px auto;
+  padding: 36px 40px 32px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* Heading */
+.edit-profile-container h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 6px;
+}
+
+.edit-profile-container h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: 14px auto 30px;
+  background: #2e7d32;
+  border-radius: 3px;
+}
+
+/* Form grid: two columns on wider screens */
+.edit-profile-container form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 24px;
+}
+
+/* Form row spacing */
+.editform-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Address spans full width */
+.editform-row:has(input[name="address"]) {
+  grid-column: 1 / -1;
+}
+
+/* Label style */
+.editform-row label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 7px;
+  letter-spacing: 0.01em;
+}
+
+/* Input & select */
+.editform-row input,
+.editform-row select {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  font-size: 14.5px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #111827;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.editform-row input::placeholder {
+  color: #9ca3af;
+}
+
+/* Focus effect (soft) */
+.editform-row input:focus,
+.editform-row select:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.14);
+}
+
+.editform-row input:hover,
+.editform-row select:hover {
+  border-color: #b5bcc6;
+}
+
+/* Required star */
+.required {
+  color: #dc2626;
+  margin-left: 3px;
+}
+
+/* Submit / cancel actions */
+.form-editactions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 22px;
+  border-top: 1px solid #f0f1f3;
+}
+
+.useredit-update-btn {
+  background-color: #2e7d32;
+  border: none;
+  color: #fff;
+  padding: 11px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(46, 125, 50, 0.25);
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.useredit-update-btn:hover:not(:disabled) {
+  background-color: #256428;
+  box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+}
+
+.useredit-update-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.useredit-update-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.useredit-cancel-btn {
+  background-color: #c70c0c;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 11px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.useredit-cancel-btn:hover {
+  background-color: #c70c0c;
+  border-color: #b5bcc6;
+}
+
+.button-loader {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top: 2px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: edit-profile-spin 0.8s linear infinite;
+}
+
+@keyframes edit-profile-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .edit-profile-container {
+    margin: 20px;
+    padding: 26px 22px;
+  }
+
+  .edit-profile-container form {
+    grid-template-columns: 1fr;
+  }
+
+  .editform-row:has(input[name="address"]) {
+    grid-column: auto;
+  }
+}
+
+input:focus:invalid,
+select:focus:invalid {
+  outline: none;
+  box-shadow: none;
+}

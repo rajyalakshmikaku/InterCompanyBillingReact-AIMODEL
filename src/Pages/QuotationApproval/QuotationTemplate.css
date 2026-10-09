@@ -1,0 +1,149 @@
+/* QuotationTemplate.css */
+
+.quotationtemplate-wrapper {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.quotationtemplate-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.quotationtemplate-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3D8C4F;
+}
+
+.quotationtemplate-section {
+    margin-bottom: 30px;
+    color: #3D8C4F;
+}
+
+.quotationtemplate-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.quotationtemplate-table th,
+.quotationtemplate-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+/* ✅ Keep only ONE version */
+.quotationtemplate-view-actions {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    gap: 15px;                /* Space between buttons */
+    margin-top: 30px;
+}
+
+/* Buttons */
+.btn-approve,
+.btn-reject {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    min-width: 100px; /* same size */
+}
+
+.btn-approve {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-reject {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 550px;
+    max-width: 90%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 15px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.map-info-section {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.map-section-title {
+  color: #3D8C4F;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.map-info-row {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.map-label {
+  width: 200px;        /* fixed width for alignment */
+  font-weight: bold;
+  color: #333;
+}
+
+.map-value {
+  flex: 1;
+  color: #555;
+}
+.company-logo {
+  float: right;
+  margin-left: 20px;
+}
+.btn-approve, .btn-reject {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between spinner and text */
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
