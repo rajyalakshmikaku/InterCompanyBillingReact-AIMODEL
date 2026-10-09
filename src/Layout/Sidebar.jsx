@@ -62,6 +62,7 @@ const Sidebar = () => {
       '/screenmapping',
       '/userverification',
       '/deleted',
+      '/aichat',
     ];
 
     superAdminOnlyRoutes.forEach(path => {

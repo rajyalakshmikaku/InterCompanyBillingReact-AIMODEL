@@ -16,7 +16,7 @@ import changePasswordReducer from "./ChangePasswordSlice";
 import creditNoteReducer from "./CreditNoteSlice";
 import reportsReducer from "./ReportsDashboardSlice";
 import UserVerificationReducer from "./UserVerificationSlice";
-
+import AiReducer from "./aiSlice";
 
 export const store = configureStore({
   reducer: {
@@ -36,7 +36,8 @@ export const store = configureStore({
         changePassword: changePasswordReducer,
         creditNote: creditNoteReducer,
         reports : reportsReducer,
-       users: UserVerificationReducer,
+        users: UserVerificationReducer,
+        ai: AiReducer,
 
   },
 });

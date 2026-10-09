@@ -33,6 +33,7 @@ export const allRoutes = [
   { path: '/userverification', label: 'User Verification', group: 'Administration', icon: FaUsersCog },
   { path: '/screenmapping', label: 'User Management', group: 'Administration', icon: FaUsersCog },
   { path: '/Auditlog', label: 'Audit Log', group: 'Administration', icon: FaHistory },
+  { path: '/aichat', label: 'Chat', group: 'General', icon: FaComments },
 ];
 
 export const GROUP_ORDER = ['General', 'Billing', 'Master Data', 'Administration'];
