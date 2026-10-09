@@ -32,11 +32,9 @@ import RejectedList from './Pages/RejectedList/RejectedList';
 import BillingOverview from './Pages/BillingOverview/BillingOverview';
 import BulkUploadHistoricalBacklog from './Pages/BulkUpload/BulkUploadHistoricalBacklog';
 import ProformaInvoiceTemplate from './Pages/QuotationApproval/ProformaInvoiceTemplate';
-
 import Deleted from './Pages/Deleted/Deleted';
-
 import UserVerification from './Pages/UserVerification/UserVerification';
-
+import AiChat from './Pages/Aichat/AiChat';
 
 function App() {
   useEffect(() => {
@@ -61,6 +59,15 @@ function App() {
         <Route path="/ProformaInvoicetemplate" element={<ProformaInvoiceTemplate />} />
         {/* Protected routes inside Layout */}
         <Route path="/" element={<Layout />}>
+         
+          <Route
+            path="/aichat"
+            element={
+              <PrivateRoute requiredScreen="/aichat">
+                <AiChat />
+              </PrivateRoute>
+            }
+          />
 
           <Route
             path="/billingOverview"
