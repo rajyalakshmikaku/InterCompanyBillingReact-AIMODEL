@@ -13,6 +13,7 @@ import {
   FaUsersCog,
   FaBuilding,
   FaBoxOpen,
+  FaComments
 } from 'react-icons/fa';
 
 export const allRoutes = [

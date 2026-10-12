@@ -6,6 +6,7 @@ import { logout } from "../../redux/LoginSlice";
 import { sendChatMessage } from "../../services/AiChatApi";
 
 
+
 const SUGGESTIONS = [
   "Help me understand this project",
   "Help me with an idea",
@@ -119,31 +120,7 @@ export default function AiChat() {
           </div>
         </div>
 
-        <div className="sidebar-bottom">
-          <div className="user-section">
-            <div className="user-avatar">
-              {displayName.charAt(0).toUpperCase()}
-            </div>
-            <span className="user-name">{displayName}</span>
-          </div>
-          {user ? (
-            <button
-              type="button"
-              className="sidebar-link"
-              onClick={handleLogout}
-            >
-              Log out
-            </button>
-          ) : (
-            <button
-              type="button"
-              className="sidebar-link primary"
-              onClick={() => navigate("/")}
-            >
-              Log in
-            </button>
-          )}
-        </div>
+        
       </aside>
 
       <main className="ai-main">
@@ -162,15 +139,7 @@ export default function AiChat() {
             <span className="model-name">AIMODEL</span>
           </div>
 
-          {!user && (
-            <button
-              type="button"
-              className="btn-login"
-              onClick={() => navigate("/")}
-            >
-              Log in
-            </button>
-          )}
+         
         </header>
 
         <div className="messages-container" ref={listRef}>

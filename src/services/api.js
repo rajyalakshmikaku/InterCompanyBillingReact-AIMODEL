@@ -4,9 +4,9 @@ import alertify from 'alertifyjs';
 
 
 
-//export const baseURL = "https://localhost:7034";
+export const baseURL = "https://localhost:7034";
 //export const baseURL = "http://154.66.198.237:3001";
-export const baseURL = "https://testing.iotsa.tech:3001";
+//export const baseURL = "https://testing.iotsa.tech:3001";
 //export const baseURL = "https://durban.iotsa.tech:8069";
 
 
