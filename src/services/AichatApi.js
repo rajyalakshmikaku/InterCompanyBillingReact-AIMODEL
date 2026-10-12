@@ -26,7 +26,9 @@ export const sendChatMessage = async (message) => {
 
             const data = error.response.data;
 
-            if (typeof data === "string") {
+            if (error.response.status === 401) {
+                message2 = "Please sign in to use this feature.";
+            } else if (typeof data === "string" && data) {
                 message2 = data;
             } else if (data?.message) {
                 message2 = data.message;

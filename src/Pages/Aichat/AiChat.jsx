@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./AiChat.css";
 import { logout } from "../../redux/LoginSlice";
 import { sendChatMessage } from "../../services/AiChatApi";
@@ -17,7 +17,10 @@ const SUGGESTIONS = [
 export default function AiChat() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.auth.user);
+  const user = useSelector((state) => state.auth?.user);
+  // "/chat" is the standalone page (no app layout), reachable without signing in.
+  const standalone = useLocation().pathname.toLowerCase() === "/chat";
+  const signedIn = !!sessionStorage.getItem("token");
 
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [messages, setMessages] = useState([]);
@@ -95,7 +98,11 @@ export default function AiChat() {
   const displayName = user?.name || user?.userName || "Guest";
 
   return (
-    <div className={`ai-app ${sidebarOpen ? "" : "sidebar-collapsed"}`}>
+    <div
+      className={`ai-app ${sidebarOpen ? "" : "sidebar-collapsed"} ${
+        standalone ? "standalone" : ""
+      }`}
+    >
       <aside className="ai-sidebar">
         <div className="sidebar-top">
           <button
@@ -139,7 +146,19 @@ export default function AiChat() {
             <span className="model-name">AIMODEL</span>
           </div>
 
-         
+          {standalone && (
+            <div className="header-actions">
+              {signedIn ? (
+                <button type="button" className="header-btn" onClick={() => navigate("/aichat")}>
+                  Back to app
+                </button>
+              ) : (
+                <button type="button" className="header-btn primary" onClick={() => navigate("/")}>
+                  Sign in
+                </button>
+              )}
+            </div>
+          )}
         </header>
 
         <div className="messages-container" ref={listRef}>
@@ -204,6 +223,7 @@ export default function AiChat() {
           </div>
           <div className="composer-note">
             AIMODEL can make mistakes. Check important information.
+            {!signedIn && " Sign in to ask about your quotations, invoices and customers."}
           </div>
         </div>
       </main>

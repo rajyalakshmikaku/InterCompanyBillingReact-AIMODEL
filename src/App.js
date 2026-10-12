@@ -51,6 +51,8 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/activation" element={<Activation />} />
+        {/* AI chat is usable both signed in and signed out */}
+        <Route path="/chat" element={<AiChat />} />
         <Route path="/quotationtemplate" element={<QuotationTemplate />} />
         <Route path="/Invoicetemplate" element={<InvoiceTemplate />} />
         <Route path="/QuotationTemplateModern" element={<QuotationTemplateModern />} />

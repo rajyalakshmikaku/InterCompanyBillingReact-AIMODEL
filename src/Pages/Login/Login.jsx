@@ -233,6 +233,12 @@ const Login = () => {
             User Registration
           </button>
         </p>
+        <p className="lp-footer-text">
+          Have a question?{' '}
+          <button type="button" className="lp-link-btn" onClick={() => navigate('/chat')}>
+            Chat with AIMODEL
+          </button>
+        </p>
       </motion.div>
 
       {/* Forgot Password Modal */}
