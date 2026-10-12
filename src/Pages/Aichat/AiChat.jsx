@@ -58,7 +58,7 @@ export default function AiChat() {
     setLoading(true);
 
     try {
-      const data = await sendChatMessage(text);
+      const data = await sendChatMessage(text, messages);
       setMessages((prev) => [
         ...prev,
         {

@@ -1,7 +1,6 @@
 import { AxiosInstance } from "./api";
 
-export const sendChatMessage = async (message) => {
-    debugger;
+export const sendChatMessage = async (message, history = []) => {
     try {
         console.log("Sending message to AI:", message);
 
@@ -9,6 +8,8 @@ export const sendChatMessage = async (message) => {
             "/api/AIModel/chat",
             {
                 message: message,
+                // last few turns so follow-ups ("give those users names") keep their context
+                history: history.slice(-4).map((m) => ({ role: m.role, text: m.text })),
             }
         );
 
